@@ -75,8 +75,8 @@ function Cameras() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {cameras.map((camera) => (
-                  <TableRow key={camera.id || Math.random()}>
+                {cameras.map((camera, index) => (
+                  <TableRow key={camera.id || `camera-${index}`}>
                     <TableCell>{camera.id || 'N/A'}</TableCell>
                     <TableCell>{camera.name || 'Unknown'}</TableCell>
                     <TableCell>

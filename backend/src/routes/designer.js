@@ -252,7 +252,7 @@ function generateCmd(url, method, params, body, token) {
 }
 
 function generateJavaScript(url, method, params, body, token) {
-  let code = `const axios = require('axios');\nconst https = require('https');\n\n`;
+  let code = `import axios from 'axios';\nimport https from 'https';\n\n`;
 
   if (params && Object.keys(params).length > 0) {
     const queryString = new URLSearchParams(params).toString();

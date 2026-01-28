@@ -88,8 +88,8 @@ function Alarms() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {alarms.map((alarm) => (
-                  <TableRow key={alarm.id || Math.random()}>
+                {alarms.map((alarm, index) => (
+                  <TableRow key={alarm.id || `alarm-${index}`}>
                     <TableCell>{alarm.id || 'N/A'}</TableCell>
                     <TableCell>{alarm.type || 'Unknown'}</TableCell>
                     <TableCell>

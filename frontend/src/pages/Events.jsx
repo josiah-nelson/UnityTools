@@ -120,8 +120,8 @@ function Events() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {events.map((event) => (
-                  <TableRow key={event.id || Math.random()}>
+                {events.map((event, index) => (
+                  <TableRow key={event.id || `event-${index}`}>
                     <TableCell>{event.id || 'N/A'}</TableCell>
                     <TableCell>{event.type || 'Unknown'}</TableCell>
                     <TableCell>{event.source || 'N/A'}</TableCell>

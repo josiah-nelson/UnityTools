@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import session from 'express-session';
-import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
 // Import routes
@@ -13,9 +12,16 @@ import designerRoutes from './routes/designer.js';
 // Load environment variables
 dotenv.config();
 
+// Validate required environment variables
+if (!process.env.SESSION_SECRET) {
+  console.error('FATAL ERROR: SESSION_SECRET environment variable is not set.');
+  console.error('Generate a secure secret with: openssl rand -hex 32');
+  process.exit(1);
+}
+
 const app = express();
 const PORT = process.env.PORT || 3001;
-const SESSION_SECRET = process.env.SESSION_SECRET || 'unity-tools-secret-key-change-me';
+const SESSION_SECRET = process.env.SESSION_SECRET;
 
 // Middleware
 app.use(cors({
@@ -23,8 +29,8 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Session configuration
 app.use(session({

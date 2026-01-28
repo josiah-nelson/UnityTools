@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import axios from 'axios';
+import https from 'https';
 
 /**
  * Unity Web Endpoint Authentication Service
@@ -7,7 +8,10 @@ import axios from 'axios';
  */
 class UnityAuthService {
   constructor() {
-    this.sessions = new Map();
+    // Create reusable HTTPS agent for self-signed certificates
+    this.httpsAgent = new https.Agent({
+      rejectUnauthorized: false
+    });
   }
 
   /**
@@ -45,9 +49,7 @@ class UnityAuthService {
         headers: {
           'Content-Type': 'application/json'
         },
-        httpsAgent: new (await import('https')).Agent({
-          rejectUnauthorized: false // Allow self-signed certificates
-        })
+        httpsAgent: this.httpsAgent
       });
 
       if (response.data && response.data.token) {
@@ -104,9 +106,7 @@ class UnityAuthService {
         'Authorization': `Bearer ${session.token}`,
         'Content-Type': 'application/json'
       },
-      httpsAgent: new (await import('https')).Agent({
-        rejectUnauthorized: false
-      })
+      httpsAgent: this.httpsAgent
     });
   }
 }

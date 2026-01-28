@@ -1,15 +1,71 @@
 import fs from 'fs/promises';
 import path from 'path';
+import crypto from 'crypto';
 
 /**
  * Configuration Service
  * Manages server configurations, credentials, and site lists
+ * Encrypts sensitive credentials using AES-256-GCM
  */
 class ConfigService {
   constructor() {
     this.dataDir = process.env.DATA_DIR || './data';
     this.configFile = path.join(this.dataDir, 'config.json');
+    this.algorithm = 'aes-256-gcm';
     this.ensureDataDir();
+  }
+
+  /**
+   * Get encryption key derived from SESSION_SECRET
+   */
+  getEncryptionKey() {
+    const secret = process.env.SESSION_SECRET;
+    if (!secret) {
+      throw new Error('SESSION_SECRET must be set for credential encryption');
+    }
+    // Derive a 32-byte key from the session secret
+    return crypto.createHash('sha256').update(secret).digest();
+  }
+
+  /**
+   * Encrypt sensitive data
+   */
+  encrypt(text) {
+    const key = this.getEncryptionKey();
+    const iv = crypto.randomBytes(16);
+    const cipher = crypto.createCipheriv(this.algorithm, key, iv);
+
+    let encrypted = cipher.update(text, 'utf8', 'hex');
+    encrypted += cipher.final('hex');
+
+    const authTag = cipher.getAuthTag();
+
+    // Return iv:authTag:encrypted
+    return iv.toString('hex') + ':' + authTag.toString('hex') + ':' + encrypted;
+  }
+
+  /**
+   * Decrypt sensitive data
+   */
+  decrypt(encryptedData) {
+    const key = this.getEncryptionKey();
+    const parts = encryptedData.split(':');
+
+    if (parts.length !== 3) {
+      throw new Error('Invalid encrypted data format');
+    }
+
+    const iv = Buffer.from(parts[0], 'hex');
+    const authTag = Buffer.from(parts[1], 'hex');
+    const encrypted = parts[2];
+
+    const decipher = crypto.createDecipheriv(this.algorithm, key, iv);
+    decipher.setAuthTag(authTag);
+
+    let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+    decrypted += decipher.final('utf8');
+
+    return decrypted;
   }
 
   async ensureDataDir() {
@@ -61,7 +117,7 @@ class ConfigService {
       name: serverConfig.name,
       url: serverConfig.url,
       userNonce: serverConfig.userNonce,
-      userKey: serverConfig.userKey,
+      userKey: this.encrypt(serverConfig.userKey), // Encrypt sensitive credential
       createdAt: new Date().toISOString()
     };
 
@@ -102,7 +158,16 @@ class ConfigService {
   async getServer(serverId) {
     const config = await this.loadConfig();
     const server = config.servers.find(s => s.id === serverId);
-    return server || null;
+
+    if (!server) {
+      return null;
+    }
+
+    // Decrypt the userKey before returning
+    return {
+      ...server,
+      userKey: this.decrypt(server.userKey)
+    };
   }
 
   /**
@@ -133,7 +198,15 @@ class ConfigService {
 
     config.activeServerId = serverId;
     await this.saveConfig(config);
-    return { success: true, server };
+
+    // Decrypt userKey before returning
+    return {
+      success: true,
+      server: {
+        ...server,
+        userKey: this.decrypt(server.userKey)
+      }
+    };
   }
 
   /**
@@ -144,7 +217,17 @@ class ConfigService {
     if (!config.activeServerId) {
       return null;
     }
-    return config.servers.find(s => s.id === config.activeServerId) || null;
+
+    const server = config.servers.find(s => s.id === config.activeServerId);
+    if (!server) {
+      return null;
+    }
+
+    // Decrypt the userKey before returning
+    return {
+      ...server,
+      userKey: this.decrypt(server.userKey)
+    };
   }
 }
 

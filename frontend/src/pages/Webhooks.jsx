@@ -121,8 +121,8 @@ function Webhooks() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {webhooks.map((webhook) => (
-                  <TableRow key={webhook.id || Math.random()}>
+                {webhooks.map((webhook, index) => (
+                  <TableRow key={webhook.id || `webhook-${index}`}>
                     <TableCell>{webhook.id || 'N/A'}</TableCell>
                     <TableCell>{webhook.name || 'N/A'}</TableCell>
                     <TableCell>{webhook.url || 'N/A'}</TableCell>
