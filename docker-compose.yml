@@ -12,7 +12,8 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3001
-      - SESSION_SECRET=${SESSION_SECRET:-change-this-secret-key-in-production}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - FRONTEND_URL=http://localhost
       - DATA_DIR=/app/data
     volumes:
       - ./data:/app/data
