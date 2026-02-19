@@ -1,0 +1,3617 @@
+openapi: 3.1.0
+info:
+  title: "Camera HTTP REST-like API (non-cgi-x)"
+  version: 5.42.0.56
+servers:
+  - url: "{scheme}://{host}"
+    variables:
+      scheme:
+        default: http
+      host:
+        default: 192.168.0.169
+components:
+  securitySchemes:
+    digestAuth:
+      type: http
+      scheme: digest
+    authTokenCookie:
+      type: apiKey
+      in: cookie
+      name: auth-token
+paths:
+  /about:
+    get:
+      tags:
+        - other
+      summary: "GET /about"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /analytics/supports_suspend_asl:
+    get:
+      tags:
+        - analytics
+      summary: "GET /analytics/supports_suspend_asl"
+      description: "Usually none or Digest depending on endpoint; see observed statuses."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:29;302:1;401:1;-1:1"
+  /api:
+    get:
+      tags:
+        - other
+      summary: "GET /api"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /api/:
+    get:
+      tags:
+        - api
+      summary: "GET /api/"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/analytics/ppe_status:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/analytics/ppe_status"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/analytics/ppe_status"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/analytics/supports_suspend_asl:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/analytics/supports_suspend_asl"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/analytics/supports_suspend_asl"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/analytics/vfd_status:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/analytics/vfd_status"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/analytics/vfd_status"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/cgi-x/get-certs-detailed:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/cgi-x/get-certs-detailed"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/cgi-x/get-tpm-info:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/cgi-x/get-tpm-info"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/cgi-x/mech-limit:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/cgi-x/mech-limit"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/cgi-x/mech-limit"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/cgi-x/position:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/cgi-x/position"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/cgi-x/position"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/dscp/settings:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/dscp/settings"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/dscp/settings"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/elevate/settings-connection:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/elevate/settings-connection"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/elevate/settings-connection"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/elevate/settings-health:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/elevate/settings-health"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/elevate/settings-health"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/illuminator/illuminator-ctrl:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/illuminator/illuminator-ctrl"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/illuminator/illuminator-ctrl"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/ip-filter/config:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/ip-filter/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/ip-filter/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/ir-ring:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/ir-ring"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/ir-ring"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/ir-ring/status:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/ir-ring/status"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/ptz/port0/washer-configuration:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/ptz/port0/washer-configuration"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/ptz/port0/washer-configuration"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/ptz/port0/washer-configuration/default:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/ptz/port0/washer-configuration/default"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/ptz/port0/washer-configuration/default"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/ptz/positioncheck:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/ptz/positioncheck"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/ptz/positioncheck"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/ptz/powermode:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/ptz/powermode"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/ptz/powermode"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/radiometry/configs/0:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/radiometry/configs/0"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/radiometry/configs/0"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/radiometry/options/0:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/radiometry/options/0"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/radiometry/options/0"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/settings/network:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/settings/network"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/settings/network"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/settings/time:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/settings/time"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/settings/time"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/storage/config:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/storage/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/storage/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/storage/media:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/storage/media"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/get/json/storage/media"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/get/json/storage/status:
+    get:
+      tags:
+        - api
+      summary: "GET /api/get/json/storage/status"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/cgi-x/mech-limit:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/cgi-x/mech-limit"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/cgi-x/mech-limit"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/cgi-x/set-imaging-show-zones:
+    post:
+      tags:
+        - api
+      summary: "POST /api/post/json/cgi-x/set-imaging-show-zones"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+  /api/post/json/elevate/settings-reference:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/elevate/settings-reference"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/elevate/settings-reference"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/illuminator/illuminator-ctrl:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/illuminator/illuminator-ctrl"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/illuminator/illuminator-ctrl"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/ptz/positioncheck:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/ptz/positioncheck"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/ptz/positioncheck"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/ptz/powermode:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/ptz/powermode"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/ptz/powermode"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/storage/config:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/storage/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/storage/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/storage/media:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/storage/media"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/storage/media"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/storage/recordings/delete-list:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/storage/recordings/delete-list"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/storage/recordings/delete-list"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/json/web/logout:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/json/web/logout"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/json/web/logout"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/post/text/cgi-x:
+    get:
+      tags:
+        - api
+      summary: "GET /api/post/text/cgi-x"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/post/text/cgi-x"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/dscp/settings:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/dscp/settings"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/dscp/settings"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/elevate/settings-connection:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/elevate/settings-connection"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/elevate/settings-connection"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/elevate/vfd-test:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/elevate/vfd-test"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/elevate/vfd-test"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/ip-filter/config:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/ip-filter/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/ip-filter/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/ir-ring/irLedRingEnabled:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/ir-ring/irLedRingEnabled"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/ir-ring/irLedRingEnabled"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/ir-ring/ringHealthCheckEnabled:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/ir-ring/ringHealthCheckEnabled"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/ir-ring/ringHealthCheckEnabled"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/ptz/port0/washer-configuration:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/ptz/port0/washer-configuration"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/ptz/port0/washer-configuration"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/radiometry/configs/0:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/radiometry/configs/0"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/radiometry/configs/0"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/put/json/settings/time:
+    get:
+      tags:
+        - api
+      summary: "GET /api/put/json/settings/time"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/put/json/settings/time"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /api/v1:
+    get:
+      tags:
+        - api
+      summary: "GET /api/v1"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:2;404:3"
+  /api/v2:
+    get:
+      tags:
+        - api
+      summary: "GET /api/v2"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:2;404:3"
+  /api/webstream:
+    get:
+      tags:
+        - api
+      summary: "GET /api/webstream"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        101:
+          description: "Switching Protocols (WebSocket). See docs for framing/protocol details."
+      x-mutating: false
+      x-observed-statuses: "101:23;400:3;401:1"
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/webstream"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        101:
+          description: "Switching Protocols (WebSocket). See docs for framing/protocol details."
+      x-mutating: false
+      x-observed-statuses: 400:3
+  /api/webstream/token:
+    get:
+      tags:
+        - api
+      summary: "GET /api/webstream/token"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 403:3
+    head:
+      tags:
+        - api
+      summary: "HEAD /api/webstream/token"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 403:3
+  /cgi-bin:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /cgi-bin/:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /cgi-bin/admin:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/admin"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/admin.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/admin.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/alarm:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/alarm"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/alarm.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/alarm.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/auth:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/auth"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/auth.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/auth.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/config:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/config"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/config.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/config.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/event:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/event"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/event.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/event.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/firmware:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/firmware"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/firmware.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/firmware.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/get:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/get"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/get.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/get.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/health:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/health"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/health.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/health.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/image:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/image"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/image.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/image.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/io:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/io"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/io.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/io.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/jpeg:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/jpeg"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/jpg:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/jpg"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/log:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/log"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/log.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/log.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/logs:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/logs"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/logs.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/logs.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/mjpeg:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/mjpeg"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/mjpeg.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/mjpeg.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/network:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/network"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/network.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/network.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/param:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/param"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/params:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/params"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/params.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/params.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/picture:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/picture"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/picture.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/picture.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/ptz:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/ptz"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/ptz.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/ptz.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/reboot:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/reboot"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/reboot.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/reboot.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/rtsp:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/rtsp"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/rtsp.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/rtsp.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/set:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/set"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/set.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/set.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/snapshot:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/snapshot"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/snapshot.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/snapshot.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/status:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/status"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/status.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/status.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/stream:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/stream"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/stream.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/stream.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/system:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/system"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/system.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/system.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/time:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/time"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/time.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/time.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/upgrade:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/upgrade"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/upgrade.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/upgrade.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/user:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/user"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/users:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/users"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/users.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/users.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-bin/video:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/video"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:3
+  /cgi-bin/video.cgi:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-bin/video.cgi"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x:
+    get:
+      tags:
+        - other
+      summary: "GET /cgi-x"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /css:
+    get:
+      tags:
+        - other
+      summary: "GET /css"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /debug:
+    get:
+      tags:
+        - other
+      summary: "GET /debug"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /device/info:
+    get:
+      tags:
+        - device
+      summary: "GET /device/info"
+      description: "Usually none or Digest depending on endpoint; see observed statuses."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            "application/soap+xml":
+              schema:
+                type: string
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: "0:13;200:115;503:14;-1:4"
+  /diagnostic/download-bug-report:
+    get:
+      tags:
+        - diagnostic
+      summary: "GET /diagnostic/download-bug-report"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:2;401:1"
+  /diagnostic/fw-dump.shtml:
+    get:
+      tags:
+        - diagnostic
+      summary: "GET /diagnostic/fw-dump.shtml"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:1
+  /diagnostic/network-statistics:
+    get:
+      tags:
+        - diagnostic
+      summary: "GET /diagnostic/network-statistics"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: "200:1;302:1"
+  /diagnostic/network-statistics/ping:
+    put:
+      tags:
+        - diagnostic
+      summary: "PUT /diagnostic/network-statistics/ping"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+  /diagnostic/network-statistics/tcpdump:
+    get:
+      tags:
+        - diagnostic
+      summary: "GET /diagnostic/network-statistics/tcpdump"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:1
+    put:
+      tags:
+        - diagnostic
+      summary: "PUT /diagnostic/network-statistics/tcpdump"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+  /diagnostic/network-statistics/trace:
+    put:
+      tags:
+        - diagnostic
+      summary: "PUT /diagnostic/network-statistics/trace"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+  /diagnostic/network-statistics/traffic:
+    get:
+      tags:
+        - diagnostic
+      summary: "GET /diagnostic/network-statistics/traffic"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+  /diagnostic/usage-storage:
+    get:
+      tags:
+        - diagnostic
+      summary: "GET /diagnostic/usage-storage"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: "200:1;302:1"
+  /dscp/settings:
+    get:
+      tags:
+        - other
+      summary: "GET /dscp/settings"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:1;302:1;-1:1"
+  /elevate/settings-connection:
+    get:
+      tags:
+        - other
+      summary: "GET /elevate/settings-connection"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:2
+  /evox:
+    get:
+      tags:
+        - other
+      summary: "GET /evox"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /evox/about:
+    get:
+      tags:
+        - other
+      summary: "GET /evox/about"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /evox/config:
+    get:
+      tags:
+        - other
+      summary: "GET /evox/config"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /favicon.ico:
+    get:
+      tags:
+        - other
+      summary: "GET /favicon.ico"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:4
+  /fw-debug-dump.shtml:
+    get:
+      tags:
+        - other
+      summary: "GET /fw-debug-dump.shtml"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:1
+  /fw-debug.shtml:
+    get:
+      tags:
+        - other
+      summary: "GET /fw-debug.shtml"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:1
+  /fw-dump.shtml:
+    get:
+      tags:
+        - other
+      summary: "GET /fw-dump.shtml"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:1
+  /fw_dump.shtml:
+    get:
+      tags:
+        - other
+      summary: "GET /fw_dump.shtml"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:1
+  /health:
+    get:
+      tags:
+        - other
+      summary: "GET /health"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /images:
+    get:
+      tags:
+        - other
+      summary: "GET /images"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /index.html:
+    get:
+      tags:
+        - other
+      summary: "GET /index.html"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /info:
+    get:
+      tags:
+        - other
+      summary: "GET /info"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /ip-filter/config:
+    get:
+      tags:
+        - ip_filter
+      summary: "GET /ip-filter/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:1
+  /js:
+    get:
+      tags:
+        - other
+      summary: "GET /js"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /log:
+    post:
+      tags:
+        - other
+      summary: "POST /log"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      x-mutating: true
+      x-observed-statuses: 200:1
+  /logout:
+    get:
+      tags:
+        - other
+      summary: "GET /logout"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /media:
+    get:
+      tags:
+        - other
+      summary: "GET /media"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /media/cam0:
+    get:
+      tags:
+        - media
+      summary: "GET /media/cam0"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 401:2
+  /media/cam0/still.jpg:
+    get:
+      tags:
+        - media
+      summary: "GET /media/cam0/still.jpg"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            image/jpeg:
+              schema:
+                type: string
+                contentEncoding: base64
+      parameters:
+        - name: t0
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: "200:268;401:2;-1:4"
+  /media/cam0/stream:
+    get:
+      tags:
+        - media
+      summary: "GET /media/cam0/stream"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 401:2
+  /media/cam0/video:
+    get:
+      tags:
+        - media
+      summary: "GET /media/cam0/video"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 401:2
+  /metrics:
+    get:
+      tags:
+        - other
+      summary: "GET /metrics"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /microphone/0:
+    get:
+      tags:
+        - microphone
+      summary: "GET /microphone/0"
+      description: "Usually none or Digest depending on endpoint; see observed statuses."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:2;401:1"
+  /microphone/0/options:
+    get:
+      tags:
+        - microphone
+      summary: "GET /microphone/0/options"
+      description: "Usually none or Digest depending on endpoint; see observed statuses."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:2;401:1"
+  /microphone/1:
+    get:
+      tags:
+        - microphone
+      summary: "GET /microphone/1"
+      description: "Usually none or Digest depending on endpoint; see observed statuses."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:2;401:1"
+  /microphone/1/options:
+    get:
+      tags:
+        - microphone
+      summary: "GET /microphone/1/options"
+      description: "Usually none or Digest depending on endpoint; see observed statuses."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:2;401:1"
+  /network-statistics:
+    get:
+      tags:
+        - other
+      summary: "GET /network-statistics"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 0:3
+  /onvif:
+    get:
+      tags:
+        - other
+      summary: "GET /onvif"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /robots.txt:
+    get:
+      tags:
+        - other
+      summary: "GET /robots.txt"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /settings/audio:
+    get:
+      tags:
+        - settings_rest
+      summary: "GET /settings/audio"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+  /settings/audio/default:
+    get:
+      tags:
+        - settings_rest
+      summary: "GET /settings/audio/default"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+  /settings/network:
+    get:
+      tags:
+        - settings_rest
+      summary: "GET /settings/network"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:32;302:1;502:4;-1:1"
+    put:
+      tags:
+        - settings_rest
+      summary: "PUT /settings/network"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                acceptRa:
+                  type: string
+                addressV4:
+                  type: string
+                defaultGatewayV4:
+                  type: string
+                dhcpV4Enabled:
+                  type: string
+                dhcpV6State:
+                  type: string
+                dnsFromDhcp:
+                  type: string
+                enableNtp:
+                  type: string
+                enabledWsDiscovery:
+                  type: string
+                forceIPV6Clear:
+                  type: string
+                hostname:
+                  type: string
+                httpEnabled:
+                  type: string
+                httpPort:
+                  type: string
+                httpsPort:
+                  type: string
+                linkNegot:
+                  type: string
+                linkTolerance:
+                  type: string
+                minTlsVersion:
+                  type: string
+                mtuSize:
+                  type: string
+                priorityMode:
+                  type: string
+                rtspPort:
+                  type: string
+                rtspRplyPort:
+                  type: string
+                v4Enabled:
+                  type: string
+                v6Enabled:
+                  type: string
+                webrtcPort:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: "401:6;502:2"
+  /settings/network_advanced:
+    get:
+      tags:
+        - settings_rest
+      summary: "GET /settings/network_advanced"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:1
+  /settings/profileg:
+    get:
+      tags:
+        - settings_rest
+      summary: "GET /settings/profileg"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:3
+  /settings/time:
+    get:
+      tags:
+        - settings_rest
+      summary: "GET /settings/time"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:9;302:1;401:1;-1:1"
+  /sitemap.xml:
+    get:
+      tags:
+        - other
+      summary: "GET /sitemap.xml"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /snmp/settings:
+    get:
+      tags:
+        - snmp
+      summary: "GET /snmp/settings"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:1
+  /speaker/0:
+    get:
+      tags:
+        - other
+      summary: "GET /speaker/0"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:2;401:1"
+  /speaker/0/options:
+    get:
+      tags:
+        - other
+      summary: "GET /speaker/0/options"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:2;401:1"
+  /status:
+    get:
+      tags:
+        - other
+      summary: "GET /status"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /storage/config:
+    get:
+      tags:
+        - storage
+      summary: "GET /storage/config"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+  /storage/media:
+    get:
+      tags:
+        - storage
+      summary: "GET /storage/media"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:4
+  /storage/recordings:
+    get:
+      tags:
+        - storage
+      summary: "GET /storage/recordings"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      parameters:
+        - name: end
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: order
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: start
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: 200:2
+  /storage/status:
+    get:
+      tags:
+        - storage
+      summary: "GET /storage/status"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:73;302:1;401:1;-1:1"
+  /system:
+    get:
+      tags:
+        - other
+      summary: "GET /system"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /system-manager-onvif/get-firmware-data-dump:
+    get:
+      tags:
+        - other
+      summary: "GET /system-manager-onvif/get-firmware-data-dump"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:1
+  /system/config:
+    get:
+      tags:
+        - other
+      summary: "GET /system/config"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /system/status:
+    get:
+      tags:
+        - other
+      summary: "GET /system/status"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+  /video/source_config/0:
+    get:
+      tags:
+        - video
+      summary: "GET /video/source_config/0"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:4;302:1;401:1;-1:1"
+  /video/source_config/0/options:
+    get:
+      tags:
+        - video
+      summary: "GET /video/source_config/0/options"
+      description: "Digest (often) + sometimes auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:4;302:1;401:1;-1:1"
+  /web:
+    get:
+      tags:
+        - other
+      summary: "GET /web"
+      description: Unknown.
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:2
+tags:
+  - name: analytics
+  - name: api
+  - name: device
+  - name: diagnostic
+  - name: ip_filter
+  - name: media
+  - name: microphone
+  - name: other
+  - name: settings_rest
+  - name: snmp
+  - name: storage
+  - name: video
+security:
+  - digestAuth:
+[]
+    authTokenCookie:
+[]

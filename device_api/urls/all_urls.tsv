@@ -1,0 +1,568 @@
+surface	path	methods	mutating_any	auth_expected
+analytics	/analytics/supports_suspend_asl	GET	no	Usually none or Digest depending on endpoint; see observed statuses.
+api	/api/	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/analytics/ppe_status	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/analytics/supports_suspend_asl	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/analytics/vfd_status	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/cgi-x/get-certs-detailed	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/cgi-x/get-tpm-info	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/cgi-x/mech-limit	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/cgi-x/position	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/dscp/settings	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/elevate/settings-connection	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/elevate/settings-health	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/illuminator/illuminator-ctrl	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/ip-filter/config	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/ir-ring	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/ir-ring/status	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/ptz/port0/washer-configuration	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/ptz/port0/washer-configuration/default	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/ptz/positioncheck	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/ptz/powermode	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/radiometry/configs/0	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/radiometry/options/0	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/settings/network	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/settings/time	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/storage/config	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/storage/media	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/get/json/storage/status	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/cgi-x/mech-limit	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/cgi-x/set-imaging-show-zones	POST	yes	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/elevate/settings-reference	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/illuminator/illuminator-ctrl	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/ptz/positioncheck	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/ptz/powermode	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/storage/config	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/storage/media	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/storage/recordings/delete-list	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/json/web/logout	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/post/text/cgi-x	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/dscp/settings	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/elevate/settings-connection	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/elevate/vfd-test	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/ip-filter/config	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/ir-ring/irLedRingEnabled	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/ir-ring/ringHealthCheckEnabled	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/ptz/port0/washer-configuration	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/radiometry/configs/0	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/put/json/settings/time	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/v1	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/v2	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/webstream	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+api	/api/webstream/token	(any),GET,HEAD	no	Digest (often) + sometimes auth-token cookie (web session).
+cgi_x	/cgi-x/	(any),GET,HEAD	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/admin	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/admin.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/alarm	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/alarm.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/auth	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/auth.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/config	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/config.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/download-access-logs	(any),GET,HEAD	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/download-kernel-logs	(any),GET,HEAD	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/download-system-logs	(any),GET,HEAD	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/enable-dot1x	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/event	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/event.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/firmware	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/firmware.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/focus	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-certs-detailed	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-compression	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-dot1x	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-general	GET,HEAD	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-imaging	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-imaging-focus-zone	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-imaging-focus-zones	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-imaging-privacy	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-init	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-metadata	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-motion	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-move-options	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-ptz-capabilities	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-reinit-lens-options	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-revert-protect	GET,POST	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-tamper	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get-tpm-info	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/get.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/guard-tour	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/health	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/health.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/image	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/image.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/io	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/io.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/jpeg	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/jpg	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/log	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/log.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/logs	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/logs.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/mech-limit	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/mjpeg	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/mjpeg.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/network	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/network.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/param	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/params	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/params.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/peek-access-logs	(any),GET,HEAD,POST	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/peek-kernel-logs	(any),GET,HEAD,POST	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/peek-system-logs	(any),GET,HEAD,POST	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/picture	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/picture.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/position	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/ptz	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/ptz-	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/ptz-create-preset-override	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/ptz-move	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/ptz-start-aux	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/ptz.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/reboot	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/reboot.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/reinit-lens	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/remove-dot1x	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/rtsp	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/rtsp.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/save-dot1x	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set	GET	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-compression	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-general	POST	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-imaging	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-imaging-focus-zone	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-imaging-privacy	POST	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-imaging-show-zones	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-motion	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-revert-protect	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set-tamper	(any),GET,HEAD,POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/set.cgi	GET	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/snapshot	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/snapshot.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/start-firmware-upgrade	POST	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/status	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/status.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/stream	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/stream.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/system	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/system.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/time	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/time.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/upgrade	GET	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/upgrade-firmware	(any),POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/upgrade.cgi	GET	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/upload-dot1x-pair	(any),POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/upload-save-cacert	(any),POST,PUT	yes	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/user	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/users	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/users.cgi	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/video	GET	no	Digest + auth-token cookie (web session).
+cgi_x	/cgi-x/video.cgi	GET	no	Digest + auth-token cookie (web session).
+device	/device/info	GET	no	Usually none or Digest depending on endpoint; see observed statuses.
+diagnostic	/diagnostic/	(any)	no	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/download-bug-report	(any),GET	no	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/fw-dump.shtml	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/multihead-status	(any)	no	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/network-statistics	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/network-statistics/ping	PUT	yes	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/network-statistics/tcpdump	GET,PUT	yes	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/network-statistics/trace	PUT	yes	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/network-statistics/traffic	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+diagnostic	/diagnostic/usage-storage	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+ip_filter	/ip-filter/config	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+media	/media/cam0	GET	no	Unknown.
+media	/media/cam0/still.jpg	GET	no	Unknown.
+media	/media/cam0/stream	GET	no	Unknown.
+media	/media/cam0/video	GET	no	Unknown.
+microphone	/microphone/0	GET	no	Usually none or Digest depending on endpoint; see observed statuses.
+microphone	/microphone/0/options	GET	no	Usually none or Digest depending on endpoint; see observed statuses.
+microphone	/microphone/1	GET	no	Usually none or Digest depending on endpoint; see observed statuses.
+microphone	/microphone/1/options	GET	no	Usually none or Digest depending on endpoint; see observed statuses.
+onvif_soap	/onvif/	(any)	no	Digest (core ONVIF).
+onvif_soap	/onvif/analytics_service	(any),POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/device_service	(any),POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/deviceio_service	(any),POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/event_service	(any),POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/imaging_service	POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/media_service	(any),POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/media_service2	(any)	no	Digest (core ONVIF).
+onvif_soap	/onvif/ptz_service	(any),POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/recording_service	(any),POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/security_service	POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/subscription	POST	yes	Digest (core ONVIF).
+onvif_soap	/onvif/thermal_service	(any)	no	Digest (core ONVIF).
+onvif_soap	/onvif/zwave	(any)	no	Digest (core ONVIF).
+other	/about	GET	no	Unknown.
+other	/api	GET	no	Unknown.
+other	/cgi-bin	GET	no	Unknown.
+other	/cgi-bin/	GET	no	Unknown.
+other	/cgi-bin/admin	GET	no	Unknown.
+other	/cgi-bin/admin.cgi	GET	no	Unknown.
+other	/cgi-bin/alarm	GET	no	Unknown.
+other	/cgi-bin/alarm.cgi	GET	no	Unknown.
+other	/cgi-bin/auth	GET	no	Unknown.
+other	/cgi-bin/auth.cgi	GET	no	Unknown.
+other	/cgi-bin/config	GET	no	Unknown.
+other	/cgi-bin/config.cgi	GET	no	Unknown.
+other	/cgi-bin/event	GET	no	Unknown.
+other	/cgi-bin/event.cgi	GET	no	Unknown.
+other	/cgi-bin/firmware	GET	no	Unknown.
+other	/cgi-bin/firmware.cgi	GET	no	Unknown.
+other	/cgi-bin/get	GET	no	Unknown.
+other	/cgi-bin/get.cgi	GET	no	Unknown.
+other	/cgi-bin/health	GET	no	Unknown.
+other	/cgi-bin/health.cgi	GET	no	Unknown.
+other	/cgi-bin/image	GET	no	Unknown.
+other	/cgi-bin/image.cgi	GET	no	Unknown.
+other	/cgi-bin/io	GET	no	Unknown.
+other	/cgi-bin/io.cgi	GET	no	Unknown.
+other	/cgi-bin/jpeg	GET	no	Unknown.
+other	/cgi-bin/jpg	GET	no	Unknown.
+other	/cgi-bin/log	GET	no	Unknown.
+other	/cgi-bin/log.cgi	GET	no	Unknown.
+other	/cgi-bin/logs	GET	no	Unknown.
+other	/cgi-bin/logs.cgi	GET	no	Unknown.
+other	/cgi-bin/mjpeg	GET	no	Unknown.
+other	/cgi-bin/mjpeg.cgi	GET	no	Unknown.
+other	/cgi-bin/network	GET	no	Unknown.
+other	/cgi-bin/network.cgi	GET	no	Unknown.
+other	/cgi-bin/param	GET	no	Unknown.
+other	/cgi-bin/params	GET	no	Unknown.
+other	/cgi-bin/params.cgi	GET	no	Unknown.
+other	/cgi-bin/picture	GET	no	Unknown.
+other	/cgi-bin/picture.cgi	GET	no	Unknown.
+other	/cgi-bin/ptz	GET	no	Unknown.
+other	/cgi-bin/ptz.cgi	GET	no	Unknown.
+other	/cgi-bin/reboot	GET	no	Unknown.
+other	/cgi-bin/reboot.cgi	GET	no	Unknown.
+other	/cgi-bin/rtsp	GET	no	Unknown.
+other	/cgi-bin/rtsp.cgi	GET	no	Unknown.
+other	/cgi-bin/set	GET	no	Unknown.
+other	/cgi-bin/set.cgi	GET	no	Unknown.
+other	/cgi-bin/snapshot	GET	no	Unknown.
+other	/cgi-bin/snapshot.cgi	GET	no	Unknown.
+other	/cgi-bin/status	GET	no	Unknown.
+other	/cgi-bin/status.cgi	GET	no	Unknown.
+other	/cgi-bin/stream	GET	no	Unknown.
+other	/cgi-bin/stream.cgi	GET	no	Unknown.
+other	/cgi-bin/system	GET	no	Unknown.
+other	/cgi-bin/system.cgi	GET	no	Unknown.
+other	/cgi-bin/time	GET	no	Unknown.
+other	/cgi-bin/time.cgi	GET	no	Unknown.
+other	/cgi-bin/upgrade	GET	no	Unknown.
+other	/cgi-bin/upgrade.cgi	GET	no	Unknown.
+other	/cgi-bin/user	GET	no	Unknown.
+other	/cgi-bin/users	GET	no	Unknown.
+other	/cgi-bin/users.cgi	GET	no	Unknown.
+other	/cgi-bin/video	GET	no	Unknown.
+other	/cgi-bin/video.cgi	GET	no	Unknown.
+other	/cgi-x	GET	no	Unknown.
+other	/css	GET	no	Unknown.
+other	/debug	GET	no	Unknown.
+other	/dscp/settings	GET	no	Unknown.
+other	/elevate/settings-connection	GET	no	Unknown.
+other	/evox	GET	no	Unknown.
+other	/evox/about	GET	no	Unknown.
+other	/evox/config	GET	no	Unknown.
+other	/favicon.ico	GET	no	Unknown.
+other	/fw-debug-dump.shtml	GET	no	Unknown.
+other	/fw-debug.shtml	GET	no	Unknown.
+other	/fw-dump.shtml	GET	no	Unknown.
+other	/fw_dump.shtml	GET	no	Unknown.
+other	/health	GET	no	Unknown.
+other	/images	GET	no	Unknown.
+other	/index.html	GET	no	Unknown.
+other	/info	GET	no	Unknown.
+other	/js	GET	no	Unknown.
+other	/log	POST	yes	Unknown.
+other	/logout	GET	no	Unknown.
+other	/media	GET	no	Unknown.
+other	/metrics	GET	no	Unknown.
+other	/network-statistics	GET	no	Unknown.
+other	/onvif	(any),GET	no	Unknown.
+other	/robots.txt	GET	no	Unknown.
+other	/sitemap.xml	GET	no	Unknown.
+other	/speaker/0	GET	no	Unknown.
+other	/speaker/0/options	GET	no	Unknown.
+other	/status	GET	no	Unknown.
+other	/system	GET	no	Unknown.
+other	/system-manager-onvif/get-firmware-data-dump	GET	no	Unknown.
+other	/system/config	GET	no	Unknown.
+other	/system/status	GET	no	Unknown.
+other	/web	GET	no	Unknown.
+settings_rest	/settings/	(any)	no	Digest (often) + sometimes auth-token cookie (web session).
+settings_rest	/settings/audio	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+settings_rest	/settings/audio/default	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+settings_rest	/settings/disable-non-onvif-apis	(any)	no	Digest (often) + sometimes auth-token cookie (web session).
+settings_rest	/settings/network	(any),GET,PUT	yes	Digest (often) + sometimes auth-token cookie (web session).
+settings_rest	/settings/network_advanced	(any),GET	no	Digest (often) + sometimes auth-token cookie (web session).
+settings_rest	/settings/profileg	(any),GET	no	Digest (often) + sometimes auth-token cookie (web session).
+settings_rest	/settings/time	(any),GET	no	Digest (often) + sometimes auth-token cookie (web session).
+snmp	/snmp/settings	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+storage	/storage/config	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+storage	/storage/media	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+storage	/storage/recordings	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+storage	/storage/status	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+video	/video/source_config/0	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+video	/video/source_config/0/options	GET	no	Digest (often) + sometimes auth-token cookie (web session).
+webui	/	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/about.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/api	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/api	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/assets/index-BirvUwOW.css	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/assets/index-DGFMdL6G.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/assets/public-sans-latin-300-normal-C9J7XxkK.woff2	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/assets/public-sans-latin-400-normal-8Rpg0ruU.woff2	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/assets/public-sans-latin-500-normal-NlrCPXnF.woff2	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/assets/public-sans-latin-700-normal-BqJmxWdE.woff2	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/assets/roboto-latin-400-normal-CNwBRw8h.woff2	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/avigilon-favicon.ico	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/cloud-connection	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/config	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/device-logs	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/favicon.ico	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/general	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/img/login/bg.avigilon.dark.svg	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/img/login/bg.avigilon.light.svg	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/img/login/pelco_login.png	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/img/logo/logo.avigilon.dark.svg	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/img/logo/logo.avigilon.light.lg.svg	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/img/logo/logo.motorola.light.svg	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/index	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/live-view	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/login	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/logout	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/misc/metadata-to-svg.xslt	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/network/settings	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/network/single-sign-on	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/pelco-favicon.ico	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/settings	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/camera/setup-system	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/css/jquery-ui-slider-pips.css	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/css/jquery-ui.css	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/css/layout.css	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/css/pelco-cloud.css	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/css/streaming.css	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/debug.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/firmware-data-dump.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/Avigilon_RGB.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/LanguageOutlined.png	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/LanguageOutlinedWhite.png	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/clear_all.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/close.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/daynight-moon.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/daynight-sun.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/favicon.ico	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/loading.gif	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/maximize.png	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/motion.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/nomotion.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/ok-check.png	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/pelco/about-logo.png	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/pelco/debug-logo.png	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/remove_area.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/restore.png	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/select_all.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/select_area.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/slider.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/slider_bar.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/spinner.gif	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/status/	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/status/bad.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/status/exclamation.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/status/good.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/status/info.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/status/info_blue.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/status/processing.gif	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/status/warn.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/stopwatch.png	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/ui-icons_666666_256x240.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/ui-icons_ff0084_256x240.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/volume_off.svg	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/zoom_in.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/img/zoom_out.png	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/about.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/cloud-defs.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/common-defs.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/common.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/easy-qr-code-js/easy.qrcode.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/firmware-data-dump.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/globalize.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/imu.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery-ui-slider-pips.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery.form.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/class.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/i18n.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/i18next.min.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/i18nextBrowserLanguageDetector.min.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/i18nextHttpBackend.min.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/i18nextMultiloadBackendAdapter.min.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/jquery-i18next.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/jquery-ui.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/jquery.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/jquery.tablesorter.min.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/js.cookie.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/about.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/analytics.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/audio-analytics.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/audio.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/automation.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/cloud.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/common_defs.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/compression-advanced.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/compression.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/configdot1x.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/digitalio.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/disable-webui.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/dynamic-privacy.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/extended-settings.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/general.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/imaging-adjustments.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/imaging.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/ip-filter.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/licensing.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/live.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/login.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/logs.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/motion.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/network-advanced.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/network.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/privacy-zones.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/profiles.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/snmp.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/storage.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/system.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/tamper.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/translation.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/en/users.json	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/locales/{{lng}}/{{ns}}.json	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/jquery/modernizr-custom.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/json2.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/lightbox.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/live.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/login.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/logout.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/privacy.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/raphael.js	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/set-timeout-worker.js	GET,POST	yes	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-analytics-full-feature.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-analytics.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-audio-analytics.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-audio.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-automation.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-cloud-connection.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-cloud-health.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-compression-advanced.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-compression.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-configdot1x.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-digitalio.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-disable-webui.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-dynamicprivacy.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-extended-settings.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-general.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-imaging.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-ip-filter.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-licensing.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-logs.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-motion.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-network-advanced.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-network.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-physical-tamper.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-profiles.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-snmp.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-storage.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-system.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-tamper.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-users.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-zwave-associations.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-zwave-common.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/setup-zwave-node-extended.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/soaputils.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/streaming.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/streaming/audio.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/streaming/jpeg.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/streaming/mse.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/streaming/webrtc.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/tz.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/xsd-duration.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/js/xslt.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/licenses.json	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/live.shtml	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/login.shtml	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/logout	(any),POST	yes	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/logout.shtml	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/analytics-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/audio-analytics-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/device-io-msi-zwave-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/device-io-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/device-msi-automation-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/device-msi-extended-settings-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/device-msi-microphone-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/device-msi-security-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/device-msi-storage-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/device-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/event-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/imaging-msi-focus-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/imaging-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/lens-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/licensing-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/media2-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/ptz-msi-serial-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/ptz-msi-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/ptz-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/radiometry-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/recording-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/services/webrtc-service.js	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-add-license.shtml	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-adduser.shtml	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-analytics-full-feature.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-analytics.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-audio.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-automation.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-certificates.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-cloud-connection.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-cloud-health.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-compression-advanced.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-compression.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-configdot1x.shtml	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-digitalio.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-disable-webui.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-dynamicprivacy.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-extended-settings.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-general.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-imaging-adjustments.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-imaging.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-ip-filter.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-ir-led-control.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-licensing.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-logs.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-modifyuser.shtml	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-motion.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-network-advanced.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-network.shtml	(any),GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-pelco-audio-analytics.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-pelco-imaging-adjustments.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-pelco-imaging-thermal.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-pelco-imaging.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-pelco-motion.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-pelco-ptz-limits.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-privacyzones.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-profiles.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-ptz-limits.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-ptz-rover.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-remove-license.shtml	(any)	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-snmp.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-storage.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-system.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-tamper.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-tours.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-users.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-washer.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-webrtc-config.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-zwave-associations.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup-zwave-node-extended.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.
+webui	/web/setup.shtml	GET	no	Browser session (auth-token cookie) and/or Digest on backing calls.

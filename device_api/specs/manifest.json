@@ -1,0 +1,21 @@
+{
+  "version": "5.42.0.56",
+  "specs": [
+    "output/specs/onvif.soap.json",
+    "output/specs/cgix.openapi.yaml",
+    "output/specs/http_rest.openapi.yaml"
+  ],
+  "urls": [
+    "output/urls/all_urls.tsv",
+    "output/urls/all_urls.txt",
+    "output/urls/all_full_urls.txt",
+    "output/urls/urls_by_surface/"
+  ],
+  "docs": [
+    "output/docs/integration_overview.md",
+    "output/docs/auth_and_sessions.md",
+    "output/docs/onvif_soap.md",
+    "output/docs/cgix_http.md",
+    "output/docs/urls.md"
+  ]
+}

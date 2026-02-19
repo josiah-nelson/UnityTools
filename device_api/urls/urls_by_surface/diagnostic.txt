@@ -1,0 +1,10 @@
+/diagnostic/
+/diagnostic/download-bug-report
+/diagnostic/fw-dump.shtml
+/diagnostic/multihead-status
+/diagnostic/network-statistics
+/diagnostic/network-statistics/ping
+/diagnostic/network-statistics/tcpdump
+/diagnostic/network-statistics/trace
+/diagnostic/network-statistics/traffic
+/diagnostic/usage-storage

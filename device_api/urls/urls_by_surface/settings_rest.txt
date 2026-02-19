@@ -1,0 +1,8 @@
+/settings/
+/settings/audio
+/settings/audio/default
+/settings/disable-non-onvif-apis
+/settings/network
+/settings/network_advanced
+/settings/profileg
+/settings/time

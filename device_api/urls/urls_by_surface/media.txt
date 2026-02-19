@@ -1,0 +1,4 @@
+/media/cam0
+/media/cam0/still.jpg
+/media/cam0/stream
+/media/cam0/video

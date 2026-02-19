@@ -1,0 +1,14 @@
+/onvif/
+/onvif/analytics_service
+/onvif/device_service
+/onvif/deviceio_service
+/onvif/event_service
+/onvif/imaging_service
+/onvif/media_service
+/onvif/media_service2
+/onvif/ptz_service
+/onvif/recording_service
+/onvif/security_service
+/onvif/subscription
+/onvif/thermal_service
+/onvif/zwave

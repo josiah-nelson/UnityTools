@@ -1,0 +1,1 @@
+/analytics/supports_suspend_asl

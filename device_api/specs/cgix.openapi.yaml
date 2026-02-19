@@ -1,0 +1,5038 @@
+openapi: 3.1.0
+info:
+  title: "Camera cgi-x HTTP API"
+  version: 5.42.0.56
+servers:
+  - url: "{scheme}://{host}"
+    variables:
+      scheme:
+        default: http
+      host:
+        default: 192.168.0.169
+components:
+  securitySchemes:
+    digestAuth:
+      type: http
+      scheme: digest
+    authTokenCookie:
+      type: apiKey
+      in: cookie
+      name: auth-token
+paths:
+  /cgi-x/:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:2;404:6"
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /cgi-x/admin:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/admin"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/admin.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/admin.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/alarm:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/alarm"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/alarm.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/alarm.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/auth:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/auth"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/auth.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/auth.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/config:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/config"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/config.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/config.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/download-access-logs:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/download-access-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 200:4
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/download-access-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 400:3
+  /cgi-x/download-kernel-logs:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/download-kernel-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/download-kernel-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:3
+  /cgi-x/download-system-logs:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/download-system-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 200:5
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/download-system-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 400:3
+  /cgi-x/enable-dot1x:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/enable-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:3
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/enable-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:3
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/enable-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                configName:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                postSuccess:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/enable-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                configName:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                postSuccess:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/event:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/event"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/event.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/event.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/firmware:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/firmware"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/firmware.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/firmware.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/focus:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/focus"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: 200:40
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/focus"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:3
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/focus"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                FETCH_FOCUS_STATUS_URL:
+                  type: string
+                animate:
+                  type: string
+                dewarp:
+                  type: string
+                drawLikelihood:
+                  type: string
+                drawObjectId:
+                  type: string
+                height:
+                  type: string
+                init:
+                  type: string
+                isBispectral:
+                  type: string
+                isStitching:
+                  type: string
+                left:
+                  type: string
+                max:
+                  type: string
+                min:
+                  type: string
+                numStreams:
+                  type: string
+                rest:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                stitchId:
+                  type: string
+                streamId:
+                  type: string
+                success:
+                  type: string
+                top:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                width:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                zoomAbs:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/focus"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                FETCH_FOCUS_STATUS_URL:
+                  type: string
+                animate:
+                  type: string
+                dewarp:
+                  type: string
+                drawLikelihood:
+                  type: string
+                drawObjectId:
+                  type: string
+                height:
+                  type: string
+                init:
+                  type: string
+                isBispectral:
+                  type: string
+                isStitching:
+                  type: string
+                left:
+                  type: string
+                max:
+                  type: string
+                min:
+                  type: string
+                numStreams:
+                  type: string
+                rest:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                stitchId:
+                  type: string
+                streamId:
+                  type: string
+                success:
+                  type: string
+                top:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                width:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                zoomAbs:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/get:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/get-certs-detailed:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-certs-detailed"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:1;302:1;-1:1"
+  /cgi-x/get-compression:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-compression"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            "application/soap+xml":
+              schema:
+                type: string
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: 200:122
+  /cgi-x/get-dot1x:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:11
+  /cgi-x/get-general:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-general"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+            image/png:
+              schema:
+                type: string
+                contentEncoding: base64
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: "200:134;302:1;-1:3"
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/get-general"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            image/png:
+              schema:
+                type: string
+                contentEncoding: base64
+            "application/soap+xml":
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:117;401:1"
+  /cgi-x/get-imaging:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-imaging"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: "200:46;302:1;-1:1"
+  /cgi-x/get-imaging-focus-zone:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-imaging-focus-zone"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:1
+  /cgi-x/get-imaging-focus-zones:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-imaging-focus-zones"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:6;302:1;-1:1"
+  /cgi-x/get-imaging-privacy:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-imaging-privacy"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: 200:23
+  /cgi-x/get-init:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-init"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+            "application/soap+xml":
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:58;302:10;401:2;-1:1"
+  /cgi-x/get-metadata:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-metadata"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      parameters:
+        - name: mvHeight
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: mvWidth
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: 200:48
+  /cgi-x/get-motion:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-motion"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      parameters:
+        - name: maskHeight
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: maskWidth
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: 200:4
+  /cgi-x/get-move-options:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-move-options"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: "200:6;302:1;-1:1"
+  /cgi-x/get-ptz-capabilities:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-ptz-capabilities"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: "200:82;302:1;-1:1"
+  /cgi-x/get-reinit-lens-options:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-reinit-lens-options"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:3
+  /cgi-x/get-revert-protect:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-revert-protect"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:1;302:1;-1:1"
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/get-revert-protect"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:13
+  /cgi-x/get-tamper:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-tamper"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: 200:5
+  /cgi-x/get-tpm-info:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get-tpm-info"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 500:3
+  /cgi-x/get.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/get.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/guard-tour:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/guard-tour"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 500:3
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/guard-tour"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 500:3
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/guard-tour"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                align:
+                  type: string
+                common_defs:
+                  type: string
+                data:
+                  type: string
+                error:
+                  type: string
+                focusControl:
+                  type: string
+                g_streamSelection:
+                  type: string
+                live:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                numHeads:
+                  type: string
+                success:
+                  type: string
+                type:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/guard-tour"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                align:
+                  type: string
+                common_defs:
+                  type: string
+                data:
+                  type: string
+                error:
+                  type: string
+                focusControl:
+                  type: string
+                g_streamSelection:
+                  type: string
+                live:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                numHeads:
+                  type: string
+                success:
+                  type: string
+                type:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/health:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/health"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/health.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/health.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/image:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/image"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/image.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/image.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/io:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/io"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/io.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/io.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/jpeg:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/jpeg"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:3"
+  /cgi-x/jpg:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/jpg"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/log:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/log"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/log.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/log.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/logs:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/logs.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/logs.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/mech-limit:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/mech-limit"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "200:102;401:2"
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/mech-limit"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/mech-limit"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/mech-limit"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+  /cgi-x/mjpeg:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/mjpeg"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/mjpeg.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/mjpeg.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/network:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/network"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/network.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/network.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/param:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/param"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/params:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/params"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/params.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/params.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/peek-access-logs:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/peek-access-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 405:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/peek-access-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 400:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/peek-access-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:3
+  /cgi-x/peek-kernel-logs:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/peek-kernel-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/peek-kernel-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/peek-kernel-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:13
+  /cgi-x/peek-system-logs:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/peek-system-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 405:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/peek-system-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 400:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/peek-system-logs"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:18
+  /cgi-x/picture:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/picture"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/picture.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/picture.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/position:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/position"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+            text/html:
+              schema:
+                type: string
+      parameters:
+        - name: port
+          in: query
+          required: false
+          schema:
+            type: string
+      x-mutating: false
+      x-observed-statuses: "200:123;302:1;-1:1"
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/position"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/position"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                MESSAGES:
+                  type: string
+                POLL_EVERY_MS:
+                  type: string
+                POSITION_PATH:
+                  type: string
+                START_POLLING_AFTER_MS:
+                  type: string
+                TRY_POSITIONS:
+                  type: string
+                animate:
+                  type: string
+                clear:
+                  type: string
+                common_defs:
+                  type: string
+                contentType:
+                  type: string
+                data:
+                  type: string
+                dontStringify:
+                  type: string
+                element:
+                  type: string
+                en:
+                  type: string
+                error:
+                  type: string
+                errors:
+                  type: string
+                max:
+                  type: string
+                min:
+                  type: string
+                name:
+                  type: string
+                numericBool:
+                  type: string
+                rest:
+                  type: string
+                skipDisabled:
+                  type: string
+                slide:
+                  type: string
+                statusMessage:
+                  type: string
+                step:
+                  type: string
+                streamId:
+                  type: string
+                success:
+                  type: string
+                threshold:
+                  type: string
+                timeoutMs:
+                  type: string
+                to:
+                  type: string
+                true:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                zoom:
+                  type: string
+                zoomAbs:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/position"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                MESSAGES:
+                  type: string
+                POLL_EVERY_MS:
+                  type: string
+                POSITION_PATH:
+                  type: string
+                START_POLLING_AFTER_MS:
+                  type: string
+                TRY_POSITIONS:
+                  type: string
+                animate:
+                  type: string
+                clear:
+                  type: string
+                common_defs:
+                  type: string
+                contentType:
+                  type: string
+                data:
+                  type: string
+                dontStringify:
+                  type: string
+                element:
+                  type: string
+                en:
+                  type: string
+                error:
+                  type: string
+                errors:
+                  type: string
+                max:
+                  type: string
+                min:
+                  type: string
+                name:
+                  type: string
+                numericBool:
+                  type: string
+                rest:
+                  type: string
+                skipDisabled:
+                  type: string
+                slide:
+                  type: string
+                statusMessage:
+                  type: string
+                step:
+                  type: string
+                streamId:
+                  type: string
+                success:
+                  type: string
+                threshold:
+                  type: string
+                timeoutMs:
+                  type: string
+                to:
+                  type: string
+                true:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                zoom:
+                  type: string
+                zoomAbs:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/ptz:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/ptz"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/ptz-:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/ptz-"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/ptz-"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: 404:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/ptz-"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                align:
+                  type: string
+                common_defs:
+                  type: string
+                data:
+                  type: string
+                error:
+                  type: string
+                focusControl:
+                  type: string
+                g_streamSelection:
+                  type: string
+                hasZoom:
+                  type: string
+                isEnabled:
+                  type: string
+                live:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                message:
+                  type: string
+                name:
+                  type: string
+                numHeads:
+                  type: string
+                port:
+                  type: string
+                postSuccess:
+                  type: string
+                showZoomSlider:
+                  type: string
+                statusText:
+                  type: string
+                success:
+                  type: string
+                token:
+                  type: string
+                type:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/ptz-"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                align:
+                  type: string
+                common_defs:
+                  type: string
+                data:
+                  type: string
+                error:
+                  type: string
+                focusControl:
+                  type: string
+                g_streamSelection:
+                  type: string
+                hasZoom:
+                  type: string
+                isEnabled:
+                  type: string
+                live:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                message:
+                  type: string
+                name:
+                  type: string
+                numHeads:
+                  type: string
+                port:
+                  type: string
+                postSuccess:
+                  type: string
+                showZoomSlider:
+                  type: string
+                statusText:
+                  type: string
+                success:
+                  type: string
+                token:
+                  type: string
+                type:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/ptz-create-preset-override:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/ptz-create-preset-override"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/ptz-create-preset-override"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/ptz-create-preset-override"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                EnableMetadata:
+                  type: string
+                action:
+                  type: string
+                contentType:
+                  type: string
+                data:
+                  type: string
+                dataType:
+                  type: string
+                error:
+                  type: string
+                g_streamSelection:
+                  type: string
+                hasZoom:
+                  type: string
+                isEnabled:
+                  type: string
+                live:
+                  type: string
+                message:
+                  type: string
+                name:
+                  type: string
+                port:
+                  type: string
+                postSuccess:
+                  type: string
+                showZoomSlider:
+                  type: string
+                speed:
+                  type: string
+                statusText:
+                  type: string
+                success:
+                  type: string
+                token:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/ptz-create-preset-override"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                EnableMetadata:
+                  type: string
+                action:
+                  type: string
+                contentType:
+                  type: string
+                data:
+                  type: string
+                dataType:
+                  type: string
+                error:
+                  type: string
+                g_streamSelection:
+                  type: string
+                hasZoom:
+                  type: string
+                isEnabled:
+                  type: string
+                live:
+                  type: string
+                message:
+                  type: string
+                name:
+                  type: string
+                port:
+                  type: string
+                postSuccess:
+                  type: string
+                showZoomSlider:
+                  type: string
+                speed:
+                  type: string
+                statusText:
+                  type: string
+                success:
+                  type: string
+                token:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/ptz-move:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/ptz-move"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/ptz-move"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/ptz-move"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                FETCH_FOCUS_STATUS_URL:
+                  type: string
+                animate:
+                  type: string
+                height:
+                  type: string
+                init:
+                  type: string
+                left:
+                  type: string
+                max:
+                  type: string
+                min:
+                  type: string
+                rest:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                streamId:
+                  type: string
+                top:
+                  type: string
+                value:
+                  type: string
+                width:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                zoomAbs:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/ptz-move"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                FETCH_FOCUS_STATUS_URL:
+                  type: string
+                animate:
+                  type: string
+                height:
+                  type: string
+                init:
+                  type: string
+                left:
+                  type: string
+                max:
+                  type: string
+                min:
+                  type: string
+                rest:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                streamId:
+                  type: string
+                top:
+                  type: string
+                value:
+                  type: string
+                width:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                zoomAbs:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/ptz-start-aux:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/ptz-start-aux"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/ptz-start-aux"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/ptz-start-aux"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                align:
+                  type: string
+                common_defs:
+                  type: string
+                data:
+                  type: string
+                error:
+                  type: string
+                focusControl:
+                  type: string
+                g_streamSelection:
+                  type: string
+                hasZoom:
+                  type: string
+                isEnabled:
+                  type: string
+                live:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                numHeads:
+                  type: string
+                postSuccess:
+                  type: string
+                showZoomSlider:
+                  type: string
+                statusText:
+                  type: string
+                success:
+                  type: string
+                type:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/ptz-start-aux"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                align:
+                  type: string
+                common_defs:
+                  type: string
+                data:
+                  type: string
+                error:
+                  type: string
+                focusControl:
+                  type: string
+                g_streamSelection:
+                  type: string
+                hasZoom:
+                  type: string
+                isEnabled:
+                  type: string
+                live:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                numHeads:
+                  type: string
+                postSuccess:
+                  type: string
+                showZoomSlider:
+                  type: string
+                statusText:
+                  type: string
+                success:
+                  type: string
+                type:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/ptz.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/ptz.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/reboot:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/reboot"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/reboot.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/reboot.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/reinit-lens:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/reinit-lens"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/reinit-lens"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: false
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/reinit-lens"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                DOWNLOAD_BUG_REPORT_URI:
+                  type: string
+                GET_GENERAL_URI:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                beforeSend:
+                  type: string
+                cameraName:
+                  type: string
+                data:
+                  type: string
+                dataType:
+                  type: string
+                impactRefocusEnabled:
+                  type: string
+                init:
+                  type: string
+                num:
+                  type: string
+                reason:
+                  type: string
+                reinitOnImpactEn:
+                  type: string
+                success:
+                  type: string
+                system:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/reinit-lens"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                DOWNLOAD_BUG_REPORT_URI:
+                  type: string
+                GET_GENERAL_URI:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                beforeSend:
+                  type: string
+                cameraName:
+                  type: string
+                data:
+                  type: string
+                dataType:
+                  type: string
+                impactRefocusEnabled:
+                  type: string
+                init:
+                  type: string
+                num:
+                  type: string
+                reason:
+                  type: string
+                reinitOnImpactEn:
+                  type: string
+                success:
+                  type: string
+                system:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/remove-dot1x:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/remove-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/remove-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/remove-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                configName:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                postSuccess:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/remove-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                configName:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                postSuccess:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/rtsp:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/rtsp"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/rtsp.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/rtsp.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: false
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/save-dot1x:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/save-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/save-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/save-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                caCertData:
+                  type: string
+                caCertId:
+                  type: string
+                clientCertData:
+                  type: string
+                clientCertId:
+                  type: string
+                configName:
+                  type: string
+                identity:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                pkData:
+                  type: string
+                pkPassword:
+                  type: string
+                postSuccess:
+                  type: string
+                serverCertAuth:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/save-dot1x"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                caCertData:
+                  type: string
+                caCertId:
+                  type: string
+                clientCertData:
+                  type: string
+                clientCertId:
+                  type: string
+                configName:
+                  type: string
+                identity:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                pkData:
+                  type: string
+                pkPassword:
+                  type: string
+                postSuccess:
+                  type: string
+                serverCertAuth:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/set:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: true
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/set-compression:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set-compression"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/set-compression"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-compression"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                Error:
+                  type: string
+                bitrateLimit:
+                  type: string
+                display:
+                  type: string
+                encoding:
+                  type: string
+                frameRateLimit:
+                  type: string
+                gopLength:
+                  type: string
+                idleSceneEnable:
+                  type: string
+                maxSecStrmEnable:
+                  type: string
+                minCfgFrameRateLimit:
+                  type: string
+                minCfgGopLength:
+                  type: string
+                multicastAddress:
+                  type: string
+                multicastPort:
+                  type: string
+                multicastTTL:
+                  type: string
+                quality:
+                  type: string
+                resolution:
+                  type: string
+                smartCodecEnable:
+                  type: string
+                smartCodecStrength:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/set-compression"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                Error:
+                  type: string
+                bitrateLimit:
+                  type: string
+                display:
+                  type: string
+                encoding:
+                  type: string
+                frameRateLimit:
+                  type: string
+                gopLength:
+                  type: string
+                idleSceneEnable:
+                  type: string
+                maxSecStrmEnable:
+                  type: string
+                minCfgFrameRateLimit:
+                  type: string
+                minCfgGopLength:
+                  type: string
+                multicastAddress:
+                  type: string
+                multicastPort:
+                  type: string
+                multicastTTL:
+                  type: string
+                quality:
+                  type: string
+                resolution:
+                  type: string
+                smartCodecEnable:
+                  type: string
+                smartCodecStrength:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/set-general:
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-general"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+  /cgi-x/set-imaging:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set-imaging"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/set-imaging"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-imaging"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                ABS:
+                  type: string
+                FETCH_META_EVERY_MS:
+                  type: string
+                FOCUS:
+                  type: string
+                MoveType:
+                  type: string
+                OFFSET:
+                  type: string
+                REL:
+                  type: string
+                WEB_UI_FOCUS_SCALE:
+                  type: string
+                ZOOM:
+                  type: string
+                abfCalibrationOffset:
+                  type: string
+                adjustments:
+                  type: string
+                aiIspEnabled:
+                  type: string
+                clearStatus:
+                  type: string
+                containment:
+                  type: string
+                defaultSuccess:
+                  type: string
+                disabled:
+                  type: string
+                error:
+                  type: string
+                false:
+                  type: string
+                focusControl:
+                  type: string
+                handles:
+                  type: string
+                hasZoom:
+                  type: string
+                height:
+                  type: string
+                ids:
+                  type: string
+                imaging:
+                  type: string
+                init:
+                  type: string
+                irEnabled:
+                  type: string
+                isSet:
+                  type: string
+                isSupported:
+                  type: string
+                left:
+                  type: string
+                max:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                min:
+                  type: string
+                numHeads:
+                  type: string
+                postError:
+                  type: string
+                postSuccess:
+                  type: string
+                range:
+                  type: string
+                showFocusSlider:
+                  type: string
+                showZoomSlider:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                stop:
+                  type: string
+                streamId:
+                  type: string
+                submitMessage:
+                  type: string
+                success:
+                  type: string
+                tempRefocusEnabled:
+                  type: string
+                top:
+                  type: string
+                true:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                width:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:3
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/set-imaging"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                ABS:
+                  type: string
+                FETCH_META_EVERY_MS:
+                  type: string
+                FOCUS:
+                  type: string
+                MoveType:
+                  type: string
+                OFFSET:
+                  type: string
+                REL:
+                  type: string
+                WEB_UI_FOCUS_SCALE:
+                  type: string
+                ZOOM:
+                  type: string
+                abfCalibrationOffset:
+                  type: string
+                adjustments:
+                  type: string
+                clearStatus:
+                  type: string
+                containment:
+                  type: string
+                defaultSuccess:
+                  type: string
+                disabled:
+                  type: string
+                error:
+                  type: string
+                false:
+                  type: string
+                focusControl:
+                  type: string
+                handles:
+                  type: string
+                hasZoom:
+                  type: string
+                height:
+                  type: string
+                ids:
+                  type: string
+                imaging:
+                  type: string
+                init:
+                  type: string
+                isSet:
+                  type: string
+                isSupported:
+                  type: string
+                left:
+                  type: string
+                max:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                min:
+                  type: string
+                numHeads:
+                  type: string
+                postError:
+                  type: string
+                postSuccess:
+                  type: string
+                range:
+                  type: string
+                showFocusSlider:
+                  type: string
+                showZoomSlider:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                stop:
+                  type: string
+                streamId:
+                  type: string
+                submitMessage:
+                  type: string
+                success:
+                  type: string
+                top:
+                  type: string
+                true:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                width:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/set-imaging-focus-zone:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set-imaging-focus-zone"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/set-imaging-focus-zone"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-imaging-focus-zone"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                ABS:
+                  type: string
+                FETCH_META_EVERY_MS:
+                  type: string
+                FOCUS:
+                  type: string
+                MoveType:
+                  type: string
+                OFFSET:
+                  type: string
+                REL:
+                  type: string
+                WEB_UI_FOCUS_SCALE:
+                  type: string
+                ZOOM:
+                  type: string
+                abfCalibrationOffset:
+                  type: string
+                adjustments:
+                  type: string
+                containment:
+                  type: string
+                data:
+                  type: string
+                disabled:
+                  type: string
+                error:
+                  type: string
+                false:
+                  type: string
+                focusControl:
+                  type: string
+                handles:
+                  type: string
+                hasZoom:
+                  type: string
+                height:
+                  type: string
+                ids:
+                  type: string
+                init:
+                  type: string
+                isSet:
+                  type: string
+                isSupported:
+                  type: string
+                left:
+                  type: string
+                max:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                min:
+                  type: string
+                numHeads:
+                  type: string
+                range:
+                  type: string
+                showFocusSlider:
+                  type: string
+                showZoomSlider:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                stop:
+                  type: string
+                streamId:
+                  type: string
+                success:
+                  type: string
+                top:
+                  type: string
+                true:
+                  type: string
+                type:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                width:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/set-imaging-focus-zone"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                ABS:
+                  type: string
+                FETCH_META_EVERY_MS:
+                  type: string
+                FOCUS:
+                  type: string
+                MoveType:
+                  type: string
+                OFFSET:
+                  type: string
+                REL:
+                  type: string
+                WEB_UI_FOCUS_SCALE:
+                  type: string
+                ZOOM:
+                  type: string
+                abfCalibrationOffset:
+                  type: string
+                adjustments:
+                  type: string
+                containment:
+                  type: string
+                data:
+                  type: string
+                disabled:
+                  type: string
+                error:
+                  type: string
+                false:
+                  type: string
+                focusControl:
+                  type: string
+                handles:
+                  type: string
+                hasZoom:
+                  type: string
+                height:
+                  type: string
+                ids:
+                  type: string
+                init:
+                  type: string
+                isSet:
+                  type: string
+                isSupported:
+                  type: string
+                left:
+                  type: string
+                max:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizedWidth:
+                  type: string
+                min:
+                  type: string
+                numHeads:
+                  type: string
+                range:
+                  type: string
+                showFocusSlider:
+                  type: string
+                showZoomSlider:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                stop:
+                  type: string
+                streamId:
+                  type: string
+                success:
+                  type: string
+                top:
+                  type: string
+                true:
+                  type: string
+                type:
+                  type: string
+                updatePositionCb:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                width:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/set-imaging-privacy:
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-imaging-privacy"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+  /cgi-x/set-imaging-show-zones:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set-imaging-show-zones"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/set-imaging-show-zones"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-imaging-show-zones"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                abfCalibrationOffset:
+                  type: string
+                adjustments:
+                  type: string
+                bShowZones:
+                  type: string
+                data:
+                  type: string
+                defaultZone:
+                  type: string
+                disabled:
+                  type: string
+                error:
+                  type: string
+                isVisible:
+                  type: string
+                max:
+                  type: string
+                min:
+                  type: string
+                page:
+                  type: string
+                range:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                stop:
+                  type: string
+                success:
+                  type: string
+                true:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                vvsRes:
+                  type: string
+                vvsRoi:
+                  type: string
+                zone:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/set-imaging-show-zones"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                abfCalibrationOffset:
+                  type: string
+                adjustments:
+                  type: string
+                bShowZones:
+                  type: string
+                data:
+                  type: string
+                defaultZone:
+                  type: string
+                disabled:
+                  type: string
+                error:
+                  type: string
+                isVisible:
+                  type: string
+                max:
+                  type: string
+                min:
+                  type: string
+                page:
+                  type: string
+                range:
+                  type: string
+                slide:
+                  type: string
+                step:
+                  type: string
+                stop:
+                  type: string
+                success:
+                  type: string
+                true:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+                value:
+                  type: string
+                vvsRes:
+                  type: string
+                vvsRoi:
+                  type: string
+                zone:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/set-motion:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set-motion"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/set-motion"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-motion"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                FEATURE_VECTOR_MAX_SIZE:
+                  type: string
+                MAX_ZOOM_STEPS:
+                  type: string
+                MinCount:
+                  type: string
+                POLL_FREQUENCY:
+                  type: string
+                Sensitivity:
+                  type: string
+                _Name:
+                  type: string
+                _Type:
+                  type: string
+                data:
+                  type: string
+                disableScrollToZoom:
+                  type: string
+                enable:
+                  type: string
+                error:
+                  type: string
+                isFullScreen:
+                  type: string
+                isHighlighting:
+                  type: string
+                isTabbedView:
+                  type: string
+                length:
+                  type: string
+                mask:
+                  type: string
+                maskHeight:
+                  type: string
+                maskWidth:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizeAnimDurationMs:
+                  type: string
+                maximizedHeight:
+                  type: string
+                maximizedWidth:
+                  type: string
+                mv:
+                  type: string
+                mvHeight:
+                  type: string
+                mvWidth:
+                  type: string
+                normalHeight:
+                  type: string
+                normalWidth:
+                  type: string
+                numHeads:
+                  type: string
+                onvifMotionEventEnable:
+                  type: string
+                overlay:
+                  type: string
+                port:
+                  type: string
+                refreshOnAspectChange:
+                  type: string
+                refreshOnResChange:
+                  type: string
+                sch:
+                  type: string
+                select:
+                  type: string
+                selectIdx:
+                  type: string
+                sensitivity:
+                  type: string
+                size:
+                  type: string
+                threshold:
+                  type: string
+                tt:
+                  type: string
+                url:
+                  type: string
+                width:
+                  type: string
+                zoomStep:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/set-motion"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                FEATURE_VECTOR_MAX_SIZE:
+                  type: string
+                MAX_ZOOM_STEPS:
+                  type: string
+                MinCount:
+                  type: string
+                POLL_FREQUENCY:
+                  type: string
+                Sensitivity:
+                  type: string
+                _Name:
+                  type: string
+                _Type:
+                  type: string
+                data:
+                  type: string
+                disableScrollToZoom:
+                  type: string
+                enable:
+                  type: string
+                error:
+                  type: string
+                isFullScreen:
+                  type: string
+                isHighlighting:
+                  type: string
+                isTabbedView:
+                  type: string
+                length:
+                  type: string
+                mask:
+                  type: string
+                maskHeight:
+                  type: string
+                maskWidth:
+                  type: string
+                maxNumHeads:
+                  type: string
+                maximizeAnimDurationMs:
+                  type: string
+                maximizedHeight:
+                  type: string
+                maximizedWidth:
+                  type: string
+                mv:
+                  type: string
+                mvHeight:
+                  type: string
+                mvWidth:
+                  type: string
+                normalHeight:
+                  type: string
+                normalWidth:
+                  type: string
+                numHeads:
+                  type: string
+                onvifMotionEventEnable:
+                  type: string
+                overlay:
+                  type: string
+                port:
+                  type: string
+                refreshOnAspectChange:
+                  type: string
+                refreshOnResChange:
+                  type: string
+                sch:
+                  type: string
+                select:
+                  type: string
+                selectIdx:
+                  type: string
+                sensitivity:
+                  type: string
+                size:
+                  type: string
+                threshold:
+                  type: string
+                tt:
+                  type: string
+                url:
+                  type: string
+                width:
+                  type: string
+                zoomStep:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/set-revert-protect:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set-revert-protect"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/set-revert-protect"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-revert-protect"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                revertProtectEnabled:
+                  type: string
+                true:
+                  type: string
+                users:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/set-revert-protect"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                revertProtectEnabled:
+                  type: string
+                true:
+                  type: string
+                users:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/set-tamper:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set-tamper"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    head:
+      tags:
+        - cgi_x
+      summary: "HEAD /cgi-x/set-tamper"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:2
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/set-tamper"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                Armed:
+                  type: string
+                Duration:
+                  type: string
+                Threshold:
+                  type: string
+                _Name:
+                  type: string
+                _Type:
+                  type: string
+                controls:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                loadInto:
+                  type: string
+                msianavid:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+      x-observed-statuses: 200:4
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/set-tamper"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                Armed:
+                  type: string
+                Duration:
+                  type: string
+                Threshold:
+                  type: string
+                _Name:
+                  type: string
+                _Type:
+                  type: string
+                controls:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                loadInto:
+                  type: string
+                msianavid:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/set.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/set.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+      x-mutating: true
+      x-observed-statuses: "302:1;404:2"
+  /cgi-x/snapshot:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/snapshot"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/snapshot.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/snapshot.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/start-firmware-upgrade:
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/start-firmware-upgrade"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      x-mutating: true
+      x-observed-statuses: 200:2
+  /cgi-x/status:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/status"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/status.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/status.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/stream:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/stream"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/stream.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/stream.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/system:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/system"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/system.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/system.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/time:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/time"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/time.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/time.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/upgrade:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/upgrade"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+      x-observed-statuses: 302:1
+  /cgi-x/upgrade-firmware:
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/upgrade-firmware"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                DOWNLOAD_BUG_REPORT_URI:
+                  type: string
+                GET_GENERAL_URI:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                beforeSend:
+                  type: string
+                cameraName:
+                  type: string
+                data:
+                  type: string
+                dataType:
+                  type: string
+                impactRefocusEnabled:
+                  type: string
+                init:
+                  type: string
+                num:
+                  type: string
+                reason:
+                  type: string
+                reinitOnImpactEn:
+                  type: string
+                success:
+                  type: string
+                system:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/upgrade-firmware"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                DOWNLOAD_BUG_REPORT_URI:
+                  type: string
+                GET_GENERAL_URI:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                beforeSend:
+                  type: string
+                cameraName:
+                  type: string
+                data:
+                  type: string
+                dataType:
+                  type: string
+                impactRefocusEnabled:
+                  type: string
+                init:
+                  type: string
+                num:
+                  type: string
+                reason:
+                  type: string
+                reinitOnImpactEn:
+                  type: string
+                success:
+                  type: string
+                system:
+                  type: string
+                type:
+                  type: string
+                url:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/upgrade.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/upgrade.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: true
+      x-observed-statuses: 302:1
+  /cgi-x/upload-dot1x-pair:
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/upload-dot1x-pair"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                caCertData:
+                  type: string
+                clientCertData:
+                  type: string
+                configName:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                pkData:
+                  type: string
+                pkPassword:
+                  type: string
+                postSuccess:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/upload-dot1x-pair"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                caCertData:
+                  type: string
+                clientCertData:
+                  type: string
+                configName:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                pkData:
+                  type: string
+                pkPassword:
+                  type: string
+                postSuccess:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/upload-save-cacert:
+    post:
+      tags:
+        - cgi_x
+      summary: "POST /cgi-x/upload-save-cacert"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                caCertData:
+                  type: string
+                caCertId:
+                  type: string
+                clientCertData:
+                  type: string
+                clientCertId:
+                  type: string
+                configName:
+                  type: string
+                identity:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                pkData:
+                  type: string
+                pkPassword:
+                  type: string
+                postSuccess:
+                  type: string
+                serverCertAuth:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+    put:
+      tags:
+        - cgi_x
+      summary: "PUT /cgi-x/upload-save-cacert"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                PASSWORD_MASK:
+                  type: string
+                TRANSLATION_FILE:
+                  type: string
+                bIsCertificatePairUploaded:
+                  type: string
+                bIsPwModified:
+                  type: string
+                bWasCaCertUploaded:
+                  type: string
+                caCertData:
+                  type: string
+                caCertId:
+                  type: string
+                clientCertData:
+                  type: string
+                clientCertId:
+                  type: string
+                configName:
+                  type: string
+                identity:
+                  type: string
+                init:
+                  type: string
+                json:
+                  type: string
+                option:
+                  type: string
+                pkData:
+                  type: string
+                pkPassword:
+                  type: string
+                postSuccess:
+                  type: string
+                serverCertAuth:
+                  type: string
+              additionalProperties: true
+      x-mutating: true
+  /cgi-x/user:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/user"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/users:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/users"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/users.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/users.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/video:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/video"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+  /cgi-x/video.cgi:
+    get:
+      tags:
+        - cgi_x
+      summary: "GET /cgi-x/video.cgi"
+      description: "Digest + auth-token cookie (web session)."
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                contentEncoding: base64
+      x-mutating: false
+      x-observed-statuses: 302:1
+tags:
+  - name: cgi_x
+security:
+  - digestAuth:
+[]
+    authTokenCookie:
+[]

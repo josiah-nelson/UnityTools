@@ -1,0 +1,3103 @@
+{
+  "auth": {
+    "notes": [
+      "ONVIF services use SOAP 1.2 (Content-Type: application/soap+xml).",
+      "Do not replay captured Digest Authorization headers; always recompute per request.",
+      "Discover required tokens (profiles, configs, sources) before calling tokenized operations."
+    ],
+    "type": "http-digest"
+  },
+  "endpoints": [
+    {
+      "endpoint_path": "/onvif/analytics_service",
+      "operations": [
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "400:2",
+          "op": "GetAnalyticsModuleOptions",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "200:6",
+          "op": "GetAnalyticsModules",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/analytics/motiondetection",
+          "observed_statuses": "200:20",
+          "op": "GetMotionInCells",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "400:1",
+          "op": "GetRuleOptions",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "200:7",
+          "op": "GetRules",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "200:3",
+          "op": "GetSupportedAnalyticsModules",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "200:6",
+          "op": "GetSupportedRules",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "",
+          "op": "CreateAnalyticsModules",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "",
+          "op": "CreateRules",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteAnalyticsModules",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteRules",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Modify",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "",
+          "op": "ModifyAnalyticsModules",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Modify",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+          "observed_statuses": "200:2",
+          "op": "ModifyRules",
+          "param_fields": [
+            "ConfigurationToken",
+            "Rule"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/avigilon",
+      "operations": [
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.avigilon.com/onvif/ver10/avigilon/wsdl",
+          "observed_statuses": "",
+          "op": "SetMode",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "operations": [
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/licensing",
+          "observed_statuses": "",
+          "op": "ActivateLicense",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/licensing",
+          "observed_statuses": "",
+          "op": "DeactivateLicense",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Evaluate",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:1",
+          "op": "EvaluateCondition",
+          "param_fields": [
+            "ConditionName"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "GetDNS",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetDefaultGatewayOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:29;-1:1",
+          "op": "GetDeviceInformation",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetDhcpV6Duid",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:4",
+          "op": "GetDigitalInputTrigger",
+          "param_fields": [
+            "DigitalInputTriggerName"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:2",
+          "op": "GetDigitalOutputAction",
+          "param_fields": [
+            "DigitalOutputActionName"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:8",
+          "op": "GetDiscoveryMode",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "GetEmailAction",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "400:1",
+          "op": "GetEmailServer",
+          "param_fields": [
+            "ServerId"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "200:1",
+          "op": "GetEncryptionMode",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "200:1",
+          "op": "GetEncryptionModeOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "GetFtpAction",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "400:1",
+          "op": "GetFtpServer",
+          "param_fields": [
+            "ServerId"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:3",
+          "op": "GetGeoLocation",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "GetHostname",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetHostnameOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/illumination",
+          "observed_statuses": "",
+          "op": "GetIlluminatorConfig",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/illumination",
+          "observed_statuses": "",
+          "op": "GetIlluminatorConfigOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/licensing",
+          "observed_statuses": "",
+          "op": "GetLicenseActivationRequestData",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/licensing",
+          "observed_statuses": "",
+          "op": "GetLicenseConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/licensing",
+          "observed_statuses": "",
+          "op": "GetLicenseDeactivationRequestData",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/licensing",
+          "observed_statuses": "200:1",
+          "op": "GetLicenses",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetLinkTolerance",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetLinkToleranceOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "200:4",
+          "op": "GetMinTlsVersion",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetMsiNetworkProtocols",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:5",
+          "op": "GetNTP",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "GetNetworkDefaultGateway",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "GetNetworkInterfaces",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetNetworkInterfacesOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetNetworkProtocolsOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetNtpOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetNtpSourceConfig",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/extendedsettings",
+          "observed_statuses": "200:32",
+          "op": "GetOnvifSettings",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/system",
+          "observed_statuses": "",
+          "op": "GetOrderablePartNumber",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:5",
+          "op": "GetPasswordComplexityConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:5",
+          "op": "GetPasswordComplexityOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/microphone",
+          "observed_statuses": "200:1",
+          "op": "GetPhysicalDisableSwitchStatus",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetPtzPriorityMode",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetPtzPriorityModeOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:6",
+          "op": "GetRelayOutputs",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:96",
+          "op": "GetScopes",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:5",
+          "op": "GetServiceCapabilities",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:79;-1:4",
+          "op": "GetServices",
+          "param_fields": [
+            "IncludeCapability"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:2",
+          "op": "GetSnmpConfig",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:2",
+          "op": "GetSnmpConfigOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/storage",
+          "observed_statuses": "200:6",
+          "op": "GetStorageEncryptionConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetSystemDateAndTime",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "200:4",
+          "op": "GetTlsVersionOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:5",
+          "op": "GetUsers",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "200:8",
+          "op": "GetWebUiSessionTimeout",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "200:8",
+          "op": "GetWebUiSessionTimeoutOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetWifiEnabled",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "GetWifiEnabledOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:4",
+          "op": "ListActionCategories",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:16",
+          "op": "ListActionsInCategory",
+          "param_fields": [
+            "ActionCategory"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "ListActionsInSequence",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:2",
+          "op": "ListConditions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:2",
+          "op": "ListEmailAttachmentTypes",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:2",
+          "op": "ListEmailServers",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:3",
+          "op": "ListFtpFileTypes",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:2",
+          "op": "ListFtpServers",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:4",
+          "op": "ListRules",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:2",
+          "op": "ListTriggerCategories",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "List",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:6",
+          "op": "ListTriggersInCategory",
+          "param_fields": [
+            "TriggerCategory"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/licensing",
+          "observed_statuses": "",
+          "op": "ProcessLicenseCapabilityResponseData",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Simulate",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:1;400:2",
+          "op": "SimulateTrigger",
+          "param_fields": [
+            "Simulation"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "SystemReboot",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:2",
+          "op": "CreateRule",
+          "param_fields": [
+            "NewRule"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "CreateUsers",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "DeleteActionSequence",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "DeleteEmailAction",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "DeleteEmailServer",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "DeleteFtpAction",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:1",
+          "op": "DeleteRule",
+          "param_fields": [
+            "RuleName"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteUsers",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Invoke",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "200:1",
+          "op": "InvokeAction",
+          "param_fields": [
+            "Invocation"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "SetActionSequence",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/alta",
+          "observed_statuses": "",
+          "op": "SetAltaMode",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "SetDNS",
+          "param_fields": [
+            "FromDHCP"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:5",
+          "op": "SetDiscoveryMode",
+          "param_fields": [
+            "DiscoveryMode"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "SetEmailAction",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "SetEmailServer",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "",
+          "op": "SetEncryptionMode",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "SetFtpAction",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+          "observed_statuses": "",
+          "op": "SetFtpServer",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "SetGeoLocation",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "SetHostname",
+          "param_fields": [
+            "Name"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "SetHostnameFromDHCP",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/illumination",
+          "observed_statuses": "",
+          "op": "SetIlluminatorConfig",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "SetLinkTolerance",
+          "param_fields": [
+            "LinkTolerance"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "200:4",
+          "op": "SetMinTlsVersion",
+          "param_fields": [
+            "MinTlsVersion"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/system",
+          "observed_statuses": "",
+          "op": "SetMode",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "SetMsiNetworkProtocols",
+          "param_fields": [
+            "NetworkProtocols"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "SetNTP",
+          "param_fields": [
+            "FromDHCP"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "SetNetworkDefaultGateway",
+          "param_fields": [
+            "IPv4Address",
+            "IPv6Address"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:4",
+          "op": "SetNetworkInterfaces",
+          "param_fields": [
+            "InterfaceToken",
+            "NetworkInterface"
+          ],
+          "token_fields": [
+            "InterfaceToken"
+          ]
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "SetNtpSourceConfig",
+          "param_fields": [
+            "NtpSourceConfig"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/extendedsettings",
+          "observed_statuses": "",
+          "op": "SetOnvifSettings",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "SetPasswordComplexityConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "SetPtzPriorityMode",
+          "param_fields": [
+            "PriorityMode"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:1",
+          "op": "SetRelayOutputState",
+          "param_fields": [
+            "LogicalState",
+            "RelayOutputToken"
+          ],
+          "token_fields": [
+            "RelayOutputToken"
+          ]
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "SetScopes",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:1",
+          "op": "SetSnmpConfig",
+          "param_fields": [
+            "Config"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/storage",
+          "observed_statuses": "",
+          "op": "SetStorageEncryptionConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/storage",
+          "observed_statuses": "",
+          "op": "SetStorageRecordingConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "SetSystemFactoryDefault",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "",
+          "op": "SetUser",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "",
+          "op": "SetUserPassword",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+          "observed_statuses": "200:4",
+          "op": "SetWebUiSessionTimeout",
+          "param_fields": [
+            "SessionTimeout"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+          "observed_statuses": "200:4",
+          "op": "SetWifiEnabled",
+          "param_fields": [
+            "WifiEnabled"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Start",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/device/wsdl",
+          "observed_statuses": "200:1",
+          "op": "StartFirmwareUpgrade",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/deviceio_service",
+      "operations": [
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ver10/deviceIO/zwave",
+          "observed_statuses": "",
+          "op": "GetDeviceInfo",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+          "observed_statuses": "200:3",
+          "op": "GetDigitalInputConfigurationOptions",
+          "param_fields": [
+            "Token"
+          ],
+          "token_fields": [
+            "Token"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+          "observed_statuses": "200:6",
+          "op": "GetDigitalInputs",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ver10/deviceIO/zwave",
+          "observed_statuses": "",
+          "op": "GetReadingConfigs",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+          "observed_statuses": "200:3",
+          "op": "GetRelayOutputOptions",
+          "param_fields": [
+            "RelayOutputToken"
+          ],
+          "token_fields": [
+            "RelayOutputToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+          "observed_statuses": "",
+          "op": "GetSerialPortConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+          "observed_statuses": "",
+          "op": "GetSerialPortConfigurationOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ver10/deviceIO/zwave",
+          "observed_statuses": "",
+          "op": "GetZwaveServiceStatus",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ver10/deviceIO/zwave",
+          "observed_statuses": "",
+          "op": "SetDeviceInfo",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+          "observed_statuses": "",
+          "op": "SetDigitalInputConfigurations",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ver10/deviceIO/zwave",
+          "observed_statuses": "",
+          "op": "SetReadingConfigs",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+          "observed_statuses": "",
+          "op": "SetRelayOutputSettings",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+          "observed_statuses": "",
+          "op": "SetSerialPortConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ver10/deviceIO/zwave",
+          "observed_statuses": "",
+          "op": "SetZwaveServiceStatus",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/event_service",
+      "operations": [
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/events/wsdl",
+          "observed_statuses": "200:2",
+          "op": "GetEventBrokers",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/events/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetEventProperties",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/events/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetServiceCapabilities",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/eventing/event-mocking",
+          "observed_statuses": "",
+          "op": "MockTriggerAnalyticsRule",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Pull",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/events/wsdl",
+          "observed_statuses": "",
+          "op": "PullMessages",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Add",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/events/wsdl",
+          "observed_statuses": "",
+          "op": "AddEventBroker",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/events/wsdl",
+          "observed_statuses": "200:3",
+          "op": "CreatePullPointSubscription",
+          "param_fields": [
+            "Filter",
+            "InitialTerminationTime"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/events/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteEventBroker",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/imaging_service",
+      "operations": [
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/imaging/focus",
+          "observed_statuses": "",
+          "op": "DoSingleShotAutofocus",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+          "observed_statuses": "200:5",
+          "op": "GetImagingSettings",
+          "param_fields": [
+            "VideoSourceToken"
+          ],
+          "token_fields": [
+            "VideoSourceToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+          "observed_statuses": "200:22",
+          "op": "GetMoveOptions",
+          "param_fields": [
+            "VideoSourceToken"
+          ],
+          "token_fields": [
+            "VideoSourceToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+          "observed_statuses": "200:19",
+          "op": "GetOptions",
+          "param_fields": [
+            "VideoSourceToken"
+          ],
+          "token_fields": [
+            "VideoSourceToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+          "observed_statuses": "200:55",
+          "op": "GetStatus",
+          "param_fields": [
+            "VideoSourceToken"
+          ],
+          "token_fields": [
+            "VideoSourceToken"
+          ]
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+          "observed_statuses": "",
+          "op": "Move",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+          "observed_statuses": "200:3",
+          "op": "SetImagingSettings",
+          "param_fields": [
+            "ForcePersistence",
+            "ImagingSettings",
+            "VideoSourceToken"
+          ],
+          "token_fields": [
+            "VideoSourceToken"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/media_service",
+      "operations": [
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetAudioEncoderConfigurationOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:6",
+          "op": "GetAudioEncoderConfigurations",
+          "param_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "GetAudioOutputConfigurationOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "GetAudioOutputConfigurations",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "GetAudioSourceConfigurationOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:5",
+          "op": "GetAudioSourceConfigurations",
+          "param_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/stream-configuration",
+          "observed_statuses": "200:3",
+          "op": "GetCenterCroppedStreamEnable",
+          "param_fields": [
+            "VideoSourceToken"
+          ],
+          "token_fields": [
+            "VideoSourceToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/stream-configuration",
+          "observed_statuses": "200:3",
+          "op": "GetFullResolutionSecondaryStreamEnable",
+          "param_fields": [
+            "VideoSourceToken"
+          ],
+          "token_fields": [
+            "VideoSourceToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:5",
+          "op": "GetMetadataConfigurations",
+          "param_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetOSDOptions",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetOSDs",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/profile-configuration",
+          "observed_statuses": "200:4",
+          "op": "GetProfileDefaultTokens",
+          "param_fields": [
+            "Token"
+          ],
+          "token_fields": [
+            "Token"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:77",
+          "op": "GetProfiles",
+          "param_fields": [
+            "Token",
+            "Type"
+          ],
+          "token_fields": [
+            "Token"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/advancedprivacymasks",
+          "observed_statuses": "",
+          "op": "GetRemovableDynamicObjectMaskOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/advancedprivacymasks",
+          "observed_statuses": "",
+          "op": "GetRemovableDynamicObjectMasks",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/stream-configuration",
+          "observed_statuses": "200:2",
+          "op": "GetServiceCapabilities",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:10",
+          "op": "GetServiceCapabilities",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/media/wsdl",
+          "observed_statuses": "200:3",
+          "op": "GetSnapshotUri",
+          "param_fields": [
+            "ProfileToken"
+          ],
+          "token_fields": [
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/stream-configuration",
+          "observed_statuses": "200:3",
+          "op": "GetStreamConfigurationOptions",
+          "param_fields": [
+            "VideoSourceToken"
+          ],
+          "token_fields": [
+            "VideoSourceToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:7",
+          "op": "GetStreamUri",
+          "param_fields": [
+            "ProfileToken",
+            "Protocol"
+          ],
+          "token_fields": [
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:13",
+          "op": "GetVideoEncoderConfigurationOptions",
+          "param_fields": [
+            "ConfigurationToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:35",
+          "op": "GetVideoEncoderConfigurations",
+          "param_fields": [
+            "Token"
+          ],
+          "token_fields": [
+            "Token"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:2",
+          "op": "GetVideoSourceConfigurationOptions",
+          "param_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:28",
+          "op": "GetVideoSourceConfigurations",
+          "param_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ],
+          "token_fields": [
+            "ConfigurationToken",
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/webrtc",
+          "observed_statuses": "200:45",
+          "op": "GetWebrtcConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Add",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "AddConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "CreateOSD",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/advancedprivacymasks",
+          "observed_statuses": "",
+          "op": "CreateRemovableDynamicObjectMask",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteOSD",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/advancedprivacymasks",
+          "observed_statuses": "",
+          "op": "DeleteRemovableDynamicObjectMask",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Remove",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "RemoveConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "SetAudioEncoderConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "SetAudioOutputConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "SetAudioSourceConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/stream-configuration",
+          "observed_statuses": "",
+          "op": "SetCenterCroppedStreamEnable",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/stream-configuration",
+          "observed_statuses": "",
+          "op": "SetFullResolutionSecondaryStreamEnable",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "",
+          "op": "SetOSD",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/advancedprivacymasks",
+          "observed_statuses": "",
+          "op": "SetRemovableDynamicObjectMask",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/media/wsdl",
+          "observed_statuses": "",
+          "op": "SetVideoAnalyticsConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:2",
+          "op": "SetVideoEncoderConfiguration",
+          "param_fields": [
+            "Configuration"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/media/wsdl",
+          "observed_statuses": "200:1",
+          "op": "SetVideoSourceConfiguration",
+          "param_fields": [
+            "Configuration"
+          ],
+          "token_fields": [
+            "SourceToken"
+          ]
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/media/webrtc",
+          "observed_statuses": "",
+          "op": "SetWebrtcConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/ptz_service",
+      "operations": [
+        {
+          "kind": "Absolute",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "AbsoluteMove",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Continuous",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "ContinuousMove",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "GetConfigurationOptions",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "200:9",
+          "op": "GetConfigurations",
+          "param_fields": [
+            "ProfileToken"
+          ],
+          "token_fields": [
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "GetNodes",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "GetPresetTours",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "GetPresets",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "GetServiceCapabilities",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "200:17",
+          "op": "GetStatus",
+          "param_fields": [
+            "ProfileToken"
+          ],
+          "token_fields": [
+            "ProfileToken"
+          ]
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "GotoHomePosition",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "GotoPreset",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "MoveAndStartTracking",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "OperatePresetTour",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Relative",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "RelativeMove",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "SendAuxiliaryCommand",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "CreatePresetTour",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Modify",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "ModifyPresetTour",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Remove",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "RemovePreset",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Remove",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "RemovePresetTour",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "SetConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "SetHomePosition",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "SetPreset",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Stop",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+          "observed_statuses": "",
+          "op": "Stop",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/recording_service",
+      "operations": [
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetRecordings",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+          "observed_statuses": "",
+          "op": "SetRecordingConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/security_service",
+      "operations": [
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "200:2",
+          "op": "GetAllCertPathValidationPolicies",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "200:2",
+          "op": "GetAllCertificates",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetAllCertificationPaths",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "GetAllDot1XConfigurations",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetAssignedServerCertificates",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "GetAuthorizationServerConfigurations",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetCertificationPath",
+          "param_fields": [
+            "CertificationPathID"
+          ],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetJWTConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "GetKeyStatus",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "GetNetworkInterfaceDot1XConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "200:1",
+          "op": "GetServiceCapabilities",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/advancedsecurity/sso",
+          "observed_statuses": "0:1;200:24",
+          "op": "HasValidSsoConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "ReplaceServerCertificateAssignment",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "UploadCertificate",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "UploadCertificateWithPrivateKeyInPKCS12",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "UploadKeyPairInPKCS8",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "UploadPassphrase",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Add",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "AddDot1XConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Add",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "AddServerCertificateAssignment",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "CreateCertPathValidationPolicy",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "CreateCertificationPath",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "CreateECCKeyPair",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "CreatePKCS10CSR",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "CreateRSAKeyPair",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Create",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "CreateSelfSignedCertificate",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteAuthorizationServerConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteCertPathValidationPolicy",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteCertificate",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteCertificationPath",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteDot1XConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteKey",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "DeleteNetworkInterfaceDot1XConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Delete",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "DeletePassphrase",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "SetAuthorizationServerConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "SetCertPathValidationPolicy",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "SetCertificationPath",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "SetJWTConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+          "observed_statuses": "",
+          "op": "SetNetworkInterfaceDot1XConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/subscription",
+      "operations": [
+        {
+          "kind": "Pull",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/events/wsdl",
+          "observed_statuses": "0:1;200:84;502:1;-1:1",
+          "op": "PullMessages",
+          "param_fields": [
+            "MessageLimit",
+            "Timeout"
+          ],
+          "token_fields": []
+        }
+      ]
+    },
+    {
+      "endpoint_path": "/onvif/unknown",
+      "operations": [
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/analytics/motiondetection",
+          "observed_statuses": "",
+          "op": "GetMotionInCells",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/patterns",
+          "observed_statuses": "",
+          "op": "GetPTZPatterns",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/scans",
+          "observed_statuses": "",
+          "op": "GetPTZScans",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/serial",
+          "observed_statuses": "",
+          "op": "GetPTZSerialConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/zones",
+          "observed_statuses": "",
+          "op": "GetPTZZones",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/thermal/radiometry",
+          "observed_statuses": "",
+          "op": "GetRadiometricOverlayConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/thermal/radiometry",
+          "observed_statuses": "",
+          "op": "GetRadiometricOverlayItems",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.onvif.org/ver10/thermal/wsdl",
+          "observed_statuses": "",
+          "op": "GetRadiometryConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/device/lens",
+          "observed_statuses": "",
+          "op": "GetReplaceableLensSelection",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Get",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/thermal/radiometry",
+          "observed_statuses": "",
+          "op": "GetTemperatures",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/zones",
+          "observed_statuses": "",
+          "op": "GotoPTZZone",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "other",
+          "mutating": false,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/compass",
+          "observed_statuses": "",
+          "op": "UninitializePTZCompass",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Remove",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/patterns",
+          "observed_statuses": "",
+          "op": "RemovePTZPattern",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Remove",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/scans",
+          "observed_statuses": "",
+          "op": "RemovePTZScan",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Remove",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/zones",
+          "observed_statuses": "",
+          "op": "RemovePTZZone",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/compass",
+          "observed_statuses": "",
+          "op": "SetPTZCompassNorthOffset",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/limits",
+          "observed_statuses": "",
+          "op": "SetPTZFullDigitalZoomEnable",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/patterns",
+          "observed_statuses": "",
+          "op": "SetPTZPattern",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/scans",
+          "observed_statuses": "",
+          "op": "SetPTZScan",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/serial",
+          "observed_statuses": "",
+          "op": "SetPTZSerialConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/zones",
+          "observed_statuses": "",
+          "op": "SetPTZZone",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/thermal/radiometry",
+          "observed_statuses": "",
+          "op": "SetRadiometricOverlayConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/thermal/radiometry",
+          "observed_statuses": "",
+          "op": "SetRadiometricOverlayItem",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Set",
+          "mutating": true,
+          "namespace": "http://www.onvif.org/ver10/thermal/wsdl",
+          "observed_statuses": "",
+          "op": "SetRadiometryConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Start",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/patterns",
+          "observed_statuses": "",
+          "op": "StartPTZPattern",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Start",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/patterns",
+          "observed_statuses": "",
+          "op": "StartPTZPatternConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Start",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/scans",
+          "observed_statuses": "",
+          "op": "StartPTZScan",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Stop",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/patterns",
+          "observed_statuses": "",
+          "op": "StopPTZPattern",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Stop",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/patterns",
+          "observed_statuses": "",
+          "op": "StopPTZPatternConfiguration",
+          "param_fields": [],
+          "token_fields": []
+        },
+        {
+          "kind": "Stop",
+          "mutating": true,
+          "namespace": "http://www.motorolasolutions.com/onvif/ptz/scans",
+          "observed_statuses": "",
+          "op": "StopPTZScan",
+          "param_fields": [],
+          "token_fields": []
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "endpoint_path": "/onvif/avigilon",
+      "namespace": "http://www.avigilon.com/onvif/ver10/avigilon/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/avigilon"
+    },
+    {
+      "endpoint_path": "/onvif/security_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/advancedsecurity/sso",
+      "xaddr": "https://192.168.0.169/onvif/security_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/alta",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/automation",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/extendedsettings",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/illumination",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/licensing/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/microphone",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/network",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/security",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/storage",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/device/system",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/deviceio_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/deviceIO/indicator",
+      "xaddr": "https://192.168.0.169/onvif/deviceio_service"
+    },
+    {
+      "endpoint_path": "/onvif/event_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/eventing/event-mocking",
+      "xaddr": "https://192.168.0.169/onvif/event_service"
+    },
+    {
+      "endpoint_path": "/onvif/imaging_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/imaging/focus",
+      "xaddr": "https://192.168.0.169/onvif/imaging_service"
+    },
+    {
+      "endpoint_path": "/onvif/media_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/media/advancedprivacymasks",
+      "xaddr": "https://192.168.0.169/onvif/media_service"
+    },
+    {
+      "endpoint_path": "/onvif/media_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/media/profile-configuration",
+      "xaddr": "https://192.168.0.169/onvif/media_service"
+    },
+    {
+      "endpoint_path": "/onvif/media_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/media/stream-configuration",
+      "xaddr": "https://192.168.0.169/onvif/media_service"
+    },
+    {
+      "endpoint_path": "/onvif/media_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/media/webrtc",
+      "xaddr": "https://192.168.0.169/onvif/media_service"
+    },
+    {
+      "endpoint_path": "/onvif/deviceio_service",
+      "namespace": "http://www.motorolasolutions.com/onvif/ver10/deviceIO/zwave/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/deviceio_service"
+    },
+    {
+      "endpoint_path": "/onvif/security_service",
+      "namespace": "http://www.onvif.org/ver10/advancedsecurity/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/security_service"
+    },
+    {
+      "endpoint_path": "/onvif/device_service",
+      "namespace": "http://www.onvif.org/ver10/device/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/device_service"
+    },
+    {
+      "endpoint_path": "/onvif/deviceio_service",
+      "namespace": "http://www.onvif.org/ver10/deviceIO/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/deviceio_service"
+    },
+    {
+      "endpoint_path": "/onvif/event_service",
+      "namespace": "http://www.onvif.org/ver10/events/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/event_service"
+    },
+    {
+      "endpoint_path": "/onvif/media_service",
+      "namespace": "http://www.onvif.org/ver10/media/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/media_service"
+    },
+    {
+      "endpoint_path": "/onvif/recording_service",
+      "namespace": "http://www.onvif.org/ver10/recording/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/recording_service"
+    },
+    {
+      "endpoint_path": "/onvif/replay_service",
+      "namespace": "http://www.onvif.org/ver10/replay/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/replay_service"
+    },
+    {
+      "endpoint_path": "/onvif/search_service",
+      "namespace": "http://www.onvif.org/ver10/search/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/search_service"
+    },
+    {
+      "endpoint_path": "/onvif/analytics_service",
+      "namespace": "http://www.onvif.org/ver20/analytics/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/analytics_service"
+    },
+    {
+      "endpoint_path": "/onvif/imaging_service",
+      "namespace": "http://www.onvif.org/ver20/imaging/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/imaging_service"
+    },
+    {
+      "endpoint_path": "/onvif/media_service",
+      "namespace": "http://www.onvif.org/ver20/media/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/media_service"
+    },
+    {
+      "endpoint_path": "/onvif/ptz_service",
+      "namespace": "http://www.onvif.org/ver20/ptz/wsdl",
+      "xaddr": "https://192.168.0.169/onvif/ptz_service"
+    }
+  ],
+  "version": "5.42.0.56"
+}

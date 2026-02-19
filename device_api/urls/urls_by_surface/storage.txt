@@ -1,0 +1,4 @@
+/storage/config
+/storage/media
+/storage/recordings
+/storage/status
